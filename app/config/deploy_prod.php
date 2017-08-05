@@ -15,6 +15,7 @@ return new class extends DefaultDeployer
             ->repositoryUrl('git@github.com:DelBianco/rastreiateca.git')
             // the repository branch to deploy
             ->repositoryBranch('master')
+            ->symfonyEnvironment('prod')
         ;
     }
 
