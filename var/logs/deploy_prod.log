@@ -1,5 +1,5 @@
 ================================================================================
-Deployment started at Sat, 05 Aug 2017 18:14:46 -0300
+Deployment started at Sat, 05 Aug 2017 18:36:31 -0300
 ================================================================================
 
 ===> Initializing configuration
@@ -39,16 +39,12 @@ webDir                     : web
 writableDirs               : ["var/cache/","var/logs/"]
 ---> Checking technical requirements
 [localhost] Executing command: "cd /home/maxwell/PhpstormProjects/rastreiateca && which git"
-| out :: /usr/bin/git
 [OK] "git" command exists
 [localhost] Executing command: "cd /home/maxwell/PhpstormProjects/rastreiateca && which ssh"
-| out :: /usr/bin/ssh
 [OK] "ssh" command exists
-[root@rastreia.tk] Executing command: "echo 750499425"
-| out :: 750499425
+[root@rastreia.tk] Executing command: "echo 776077339"
 [OK] The server allows to login via SSH from the local machine
 [root@rastreia.tk] Executing command: "which /usr/local/bin/composer"
-| out :: /usr/local/bin/composer
 [OK] "/usr/local/bin/composer" command exists
 Executing __ beforeStartingDeploy __ hook
 
@@ -60,7 +56,6 @@ Setting the deploy_dir property for root@rastreia.tk server
 ---> Creating the remote directory layout
 [root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; mkdir -p /var/www/rastreiateca.tk && mkdir -p /var/www/rastreiateca.tk/releases && mkdir -p /var/www/rastreiateca.tk/shared)"
 [root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; export _release_path="/var/www/rastreiateca.tk/releases/$(date +%Y%m%d%H%M%S)" && mkdir -p $_release_path && echo $_release_path)"
-| out :: /var/www/rastreiateca.tk/releases/20170805211459
 ---> Initializing server directory layout
 Executing __ beforeUpdating __ hook
 Nothing to execute
@@ -68,43 +63,59 @@ Nothing to execute
 ===> Updating app code
 ---> Getting the revision ID of the code repository
 [localhost] Executing command: "(export SYMFONY_ENV=prod; cd /home/maxwell/PhpstormProjects/rastreiateca && git ls-remote git@github.com:DelBianco/rastreiateca.git master)"
-| out :: c75c0fed4b41796973a294a76f4af9a775a05455	refs/heads/master
-Code revision hash = c75c0fed4b41796973a294a76f4af9a775a05455
+Code revision hash = (the code revision)
 ---> Updating code base with remote_cache strategy
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && if [ -d /var/www/rastreiateca.tk/repo ]; then cd /var/www/rastreiateca.tk/repo && git fetch -q origin && git fetch --tags -q origin && git reset -q --hard c75c0fed4b41796973a294a76f4af9a775a05455 && git clean -q -d -x -f; else git clone -q -b master git@github.com:DelBianco/rastreiateca.git /var/www/rastreiateca.tk/repo && cd /var/www/rastreiateca.tk/repo && git checkout -q -b deploy c75c0fed4b41796973a294a76f4af9a775a05455; fi)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && if [ -d /var/www/rastreiateca.tk/repo ]; then cd /var/www/rastreiateca.tk/repo && git fetch -q origin && git fetch --tags -q origin && git reset -q --hard (the code revision) && git clean -q -d -x -f; else git clone -q -b master git@github.com:DelBianco/rastreiateca.git /var/www/rastreiateca.tk/repo && cd /var/www/rastreiateca.tk/repo && git checkout -q -b deploy (the code revision); fi)"
 Copying the updated code to the new release directory
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && cp -RPp /var/www/rastreiateca.tk/repo/* /var/www/rastreiateca.tk/releases/20170805211459)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && cp -RPp /var/www/rastreiateca.tk/repo/* (the remote project_dir))"
 Executing __ beforePreparing __ hook
 Nothing to execute
 
 ===> Preparing app
 ---> Creating cache directory
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && if [ -d /var/www/rastreiateca.tk/releases/20170805211459/var/cache ]; then rm -rf /var/www/rastreiateca.tk/releases/20170805211459/var/cache; fi; mkdir -p /var/www/rastreiateca.tk/releases/20170805211459/var/cache)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && if [ -d (the remote project_dir)/var/cache ]; then rm -rf (the remote project_dir)/var/cache; fi; mkdir -p (the remote project_dir)/var/cache)"
 ---> Creating log directory
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && if [ -d /var/www/rastreiateca.tk/releases/20170805211459/var/logs ] ; then rm -rf /var/www/rastreiateca.tk/releases/20170805211459/var/logs; fi; mkdir -p /var/www/rastreiateca.tk/releases/20170805211459/var/logs)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && if [ -d (the remote project_dir)/var/logs ] ; then rm -rf (the remote project_dir)/var/logs; fi; mkdir -p (the remote project_dir)/var/logs)"
 ---> Creating symlinks for shared directories
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && mkdir -p /var/www/rastreiateca.tk/shared/var/logs)"
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && if [ -d /var/www/rastreiateca.tk/releases/20170805211459/var/logs ] ; then rm -rf /var/www/rastreiateca.tk/releases/20170805211459/var/logs; fi)"
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && ln -nfs /var/www/rastreiateca.tk/shared/var/logs /var/www/rastreiateca.tk/releases/20170805211459/var/logs)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && mkdir -p /var/www/rastreiateca.tk/shared/var/logs)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && if [ -d (the remote project_dir)/var/logs ] ; then rm -rf (the remote project_dir)/var/logs; fi)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && ln -nfs /var/www/rastreiateca.tk/shared/var/logs (the remote project_dir)/var/logs)"
 ---> Creating symlinks for shared files
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && mkdir -p /var/www/rastreiateca.tk/shared/app/config)"
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && touch /var/www/rastreiateca.tk/shared/app/config/parameters.yml)"
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && ln -nfs /var/www/rastreiateca.tk/shared/app/config/parameters.yml /var/www/rastreiateca.tk/releases/20170805211459/app/config/parameters.yml)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && mkdir -p /var/www/rastreiateca.tk/shared/app/config)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && touch /var/www/rastreiateca.tk/shared/app/config/parameters.yml)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && ln -nfs /var/www/rastreiateca.tk/shared/app/config/parameters.yml (the remote project_dir)/app/config/parameters.yml)"
 ---> Setting permissions for writable dirs using the "chmod" method
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && chmod -R 0777 var/cache/ var/logs/)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && chmod -R 0777 var/cache/ var/logs/)"
 ---> Installing Composer dependencies
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && /usr/local/bin/composer install --no-dev --prefer-dist --no-interaction --quiet)"
-
-********************************************************************************
-[ERROR] Cancelling the deployment and reverting the changes
-********************************************************************************
-
-
-********************************************************************************
-A log file with all the error details has been generated in /home/maxwell/PhpstormProjects/rastreiateca/var/logs/deploy_prod.log
-********************************************************************************
-
-Executing __ beforeCancelingDeploy __ hook
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && /usr/local/bin/composer install --no-dev --prefer-dist --no-interaction --quiet)"
+---> Installing web assets
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && php (the remote project_dir)/bin/console assets:install (the remote project_dir)/web --symlink --no-debug --env=prod)"
+Executing __ beforeOptimizing __ hook
 Nothing to execute
----> Deleting the last release directory
-[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805211459 && export _last_release_dirname=$(ls -r1 /var/www/rastreiateca.tk/releases | head -n 1) && rm -fr /var/www/rastreiateca.tk/releases/$_last_release_dirname)"
+
+===> Optimizing app
+---> Warming up cache
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && php (the remote project_dir)/bin/console cache:warmup --no-debug --env=prod)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && chmod -R g+w (the remote project_dir)/var/cache)"
+---> Clearing controllers
+Skipping the unsafe deletion of "(the remote project_dir)/web/app_dev.php" because it's not relative to the project directory.
+There are no paths to delete.
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && rm -rf )"
+---> Optimizing Composer autoloader
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && /usr/local/bin/composer dump-autoload --optimize)"
+Executing __ beforePublishing __ hook
+Nothing to execute
+
+===> Publishing app
+---> Updating the symlink
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && rm -f /var/www/rastreiateca.tk/current && ln -s (the remote project_dir) /var/www/rastreiateca.tk/current)"
+[root@rastreia.tk] Executing command: "(export SYMFONY_ENV=prod; cd (the remote project_dir) && ls -1 /var/www/rastreiateca.tk/releases)"
+[root@rastreia.tk] Skipping cleanup of old releases; unexpected "" directory found (all directory names should be timestamps)
+Executing __ beforeFinishingDeploy __ hook
+
+===> Finishing the deployment
+
+--------------------------------------------------------------------------------
+[OK] Deployment was successful
+--------------------------------------------------------------------------------
+
