@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: rastreiateca
+    database_user: rastreiateca
+    database_password: JfCuAGF1YjjXxcpr
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: eb9b57884418df5e37476bf2527eb660448bad42
