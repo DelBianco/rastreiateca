@@ -8,11 +8,11 @@ return new class extends DefaultDeployer
     {
         return $this->getConfigBuilder()
             // SSH connection string to connect to the remote server (format: user@host-or-IP:port-number)
-            ->server('rastreiateca')
+            ->server('root@rastreiateca.tk')
             // the absolute path of the remote server directory where the project is deployed
             ->deployDir('/var/www/rastreiateca.tk')
             // the URL of the Git repository where the project code is hosted
-            ->repositoryUrl('https://github.com/symfony/symfony-demo')
+            ->repositoryUrl('git@github.com:DelBianco/rastreiateca.git')
             // the repository branch to deploy
             ->repositoryBranch('master')
         ;
@@ -27,7 +27,6 @@ return new class extends DefaultDeployer
     // run some local or remote commands after the deployment is finished
     public function beforeFinishingDeploy()
     {
-        // $this->runRemote('{{ console_bin }} app:my-task-name');
-        // $this->runLocal('say "The deployment has finished."');
+        //  $this->runLocal('say "The deployment has finished."');
     }
 };

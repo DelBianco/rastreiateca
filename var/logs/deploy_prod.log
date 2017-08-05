@@ -1,0 +1,93 @@
+================================================================================
+Deployment started at Sat, 05 Aug 2017 17:50:09 -0300
+================================================================================
+
+===> Initializing configuration
+---> Processing the configuration options of the deployer class
+binDir                     : bin
+cacheDir                   : var/cache
+composerInstallFlags       : --no-dev --prefer-dist --no-interaction --quiet
+composerOptimizeFlags      : --optimize
+configDir                  : app/config
+consoleBinaryPath          : 
+controllersToRemove        : ["web/app_dev.php"]
+deployDir                  : /var/www/rastreiateca.tk
+dumpAsseticAssets          : false
+installWebAssets           : true
+keepReleases               : 5
+localProjectDir            : /home/maxwell/PhpstormProjects/rastreiateca
+logDir                     : var/logs
+permissionGroup            : 
+permissionMethod           : chmod
+permissionMode             : 0777
+permissionUser             : 
+remoteComposerBinaryPath   : /usr/local/bin/composer
+remotePhpBinaryPath        : php
+repositoryBranch           : master
+repositoryUrl              : git@github.com:DelBianco/rastreiateca.git
+resetOpCacheFor            : 
+servers                    : root@rastreiateca.tk
+sharedDirs                 : ["var/logs"]
+sharedFiles                : ["app/config/parameters.yml"]
+srcDir                     : src
+symfonyEnvironment         : prod
+templatesDir               : app/Resources/views
+updateRemoteComposerBinary : false
+useSshAgentForwarding      : true
+warmupCache                : true
+webDir                     : web
+writableDirs               : ["var/cache/","var/logs/"]
+---> Checking technical requirements
+[localhost] Executing command: "cd /home/maxwell/PhpstormProjects/rastreiateca && which git"
+| out :: /usr/bin/git
+[OK] "git" command exists
+[localhost] Executing command: "cd /home/maxwell/PhpstormProjects/rastreiateca && which ssh"
+| out :: /usr/bin/ssh
+[OK] "ssh" command exists
+[root@rastreiateca.tk] Executing command: "echo 152576881"
+| out :: 152576881
+[OK] The server allows to login via SSH from the local machine
+[root@rastreiateca.tk] Executing command: "which /usr/local/bin/composer"
+| out :: /usr/local/bin/composer
+[OK] "/usr/local/bin/composer" command exists
+Executing __ beforeStartingDeploy __ hook
+
+===> Starting the deployment
+---> Initializing server options
+Enabling SSH agent forwarding for localhost server
+Enabling SSH agent forwarding for root@rastreiateca.tk server
+Setting the deploy_dir property for root@rastreiateca.tk server
+---> Creating the remote directory layout
+[root@rastreiateca.tk] Executing command: "(export SYMFONY_ENV=prod; mkdir -p /var/www/rastreiateca.tk && mkdir -p /var/www/rastreiateca.tk/releases && mkdir -p /var/www/rastreiateca.tk/shared)"
+[root@rastreiateca.tk] Executing command: "(export SYMFONY_ENV=prod; export _release_path="/var/www/rastreiateca.tk/releases/$(date +%Y%m%d%H%M%S)" && mkdir -p $_release_path && echo $_release_path)"
+| out :: /var/www/rastreiateca.tk/releases/20170805205018
+---> Initializing server directory layout
+Executing __ beforeUpdating __ hook
+Nothing to execute
+
+===> Updating app code
+---> Getting the revision ID of the code repository
+[localhost] Executing command: "(export SYMFONY_ENV=prod; cd /home/maxwell/PhpstormProjects/rastreiateca && git ls-remote git@github.com:DelBianco/rastreiateca.git master)"
+| out :: 2f1655d60659f0eb88338dd36ba0194861249371	refs/heads/master
+Code revision hash = 2f1655d60659f0eb88338dd36ba0194861249371
+---> Updating code base with remote_cache strategy
+[root@rastreiateca.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805205018 && if [ -d /var/www/rastreiateca.tk/repo ]; then cd /var/www/rastreiateca.tk/repo && git fetch -q origin && git fetch --tags -q origin && git reset -q --hard 2f1655d60659f0eb88338dd36ba0194861249371 && git clean -q -d -x -f; else git clone -q -b master git@github.com:DelBianco/rastreiateca.git /var/www/rastreiateca.tk/repo && cd /var/www/rastreiateca.tk/repo && git checkout -q -b deploy 2f1655d60659f0eb88338dd36ba0194861249371; fi)"
+| err :: Permission denied (publickey).
+| err :: fatal: Could not read from remote repository.
+| err :: 
+| err :: Please make sure you have the correct access rights
+| err :: and the repository exists.
+
+********************************************************************************
+[ERROR] Cancelling the deployment and reverting the changes
+********************************************************************************
+
+
+********************************************************************************
+A log file with all the error details has been generated in /home/maxwell/PhpstormProjects/rastreiateca/var/logs/deploy_prod.log
+********************************************************************************
+
+Executing __ beforeCancelingDeploy __ hook
+Nothing to execute
+---> Deleting the last release directory
+[root@rastreiateca.tk] Executing command: "(export SYMFONY_ENV=prod; cd /var/www/rastreiateca.tk/releases/20170805205018 && export _last_release_dirname=$(ls -r1 /var/www/rastreiateca.tk/releases | head -n 1) && rm -fr /var/www/rastreiateca.tk/releases/$_last_release_dirname)"

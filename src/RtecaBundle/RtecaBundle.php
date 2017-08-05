@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace RtecaBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class RtecaBundle extends Bundle
 {
 }

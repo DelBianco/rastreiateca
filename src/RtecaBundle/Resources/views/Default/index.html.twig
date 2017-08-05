@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ ivory_google_map(map) }}
+    {{ ivory_google_api([map]) }}
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Username: {{ user.username }}</p>
+    {% endif %}
+
+{% endblock %}
+
+

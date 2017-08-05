@@ -34,12 +34,14 @@ class appDevDebugProjectContainer extends Container
 
         $this->services = array();
         $this->normalizedIds = array(
-            'appbundle\\controller\\defaultcontroller' => 'AppBundle\\Controller\\DefaultController',
+            'rtecabundle\\controller\\defaultcontroller' => 'RtecaBundle\\Controller\\DefaultController',
+            'rtecabundle\\controller\\securitycontroller' => 'RtecaBundle\\Controller\\SecurityController',
         );
         $this->methodMap = array(
-            '1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' => 'get1613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService',
-            '2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' => 'get2613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService',
-            'AppBundle\\Controller\\DefaultController' => 'getAppBundle_Controller_DefaultControllerService',
+            '1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' => 'get18d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService',
+            '2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' => 'get28d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService',
+            'RtecaBundle\\Controller\\DefaultController' => 'getRtecaBundle_Controller_DefaultControllerService',
+            'RtecaBundle\\Controller\\SecurityController' => 'getRtecaBundle_Controller_SecurityControllerService',
             'annotation_reader' => 'getAnnotationReaderService',
             'annotations.reader' => 'getAnnotations_ReaderService',
             'argument_resolver.default' => 'getArgumentResolver_DefaultService',
@@ -157,6 +159,257 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'fragment.renderer.ssi' => 'getFragment_Renderer_SsiService',
             'http_kernel' => 'getHttpKernelService',
+            'httplug.async_client.default' => 'getHttplug_AsyncClient_DefaultService',
+            'httplug.auto_discovery.auto_discovered_client' => 'getHttplug_AutoDiscovery_AutoDiscoveredClientService',
+            'httplug.client.default' => 'getHttplug_Client_DefaultService',
+            'httplug.collector.collector' => 'getHttplug_Collector_CollectorService',
+            'httplug.message_factory.default' => 'getHttplug_MessageFactory_DefaultService',
+            'httplug.strategy' => 'getHttplug_StrategyService',
+            'httplug.stream_factory.default' => 'getHttplug_StreamFactory_DefaultService',
+            'httplug.uri_factory.default' => 'getHttplug_UriFactory_DefaultService',
+            'ivory.google_map.form.type.place_autocomplete' => 'getIvory_GoogleMap_Form_Type_PlaceAutocompleteService',
+            'ivory.google_map.helper.api' => 'getIvory_GoogleMap_Helper_ApiService',
+            'ivory.google_map.helper.api.event_dispatcher' => 'getIvory_GoogleMap_Helper_Api_EventDispatcherService',
+            'ivory.google_map.helper.collector.base.bound' => 'getIvory_GoogleMap_Helper_Collector_Base_BoundService',
+            'ivory.google_map.helper.collector.base.coordinate' => 'getIvory_GoogleMap_Helper_Collector_Base_CoordinateService',
+            'ivory.google_map.helper.collector.base.point' => 'getIvory_GoogleMap_Helper_Collector_Base_PointService',
+            'ivory.google_map.helper.collector.base.size' => 'getIvory_GoogleMap_Helper_Collector_Base_SizeService',
+            'ivory.google_map.helper.collector.control.custom' => 'getIvory_GoogleMap_Helper_Collector_Control_CustomService',
+            'ivory.google_map.helper.collector.event.dom_event' => 'getIvory_GoogleMap_Helper_Collector_Event_DomEventService',
+            'ivory.google_map.helper.collector.event.dom_event_once' => 'getIvory_GoogleMap_Helper_Collector_Event_DomEventOnceService',
+            'ivory.google_map.helper.collector.event.event' => 'getIvory_GoogleMap_Helper_Collector_Event_EventService',
+            'ivory.google_map.helper.collector.event.event_once' => 'getIvory_GoogleMap_Helper_Collector_Event_EventOnceService',
+            'ivory.google_map.helper.collector.layer.geo_json' => 'getIvory_GoogleMap_Helper_Collector_Layer_GeoJsonService',
+            'ivory.google_map.helper.collector.layer.heatmap' => 'getIvory_GoogleMap_Helper_Collector_Layer_HeatmapService',
+            'ivory.google_map.helper.collector.layer.kml' => 'getIvory_GoogleMap_Helper_Collector_Layer_KmlService',
+            'ivory.google_map.helper.collector.overlay.circle' => 'getIvory_GoogleMap_Helper_Collector_Overlay_CircleService',
+            'ivory.google_map.helper.collector.overlay.encoded_polyline' => 'getIvory_GoogleMap_Helper_Collector_Overlay_EncodedPolylineService',
+            'ivory.google_map.helper.collector.overlay.extendable' => 'getIvory_GoogleMap_Helper_Collector_Overlay_ExtendableService',
+            'ivory.google_map.helper.collector.overlay.ground_overlay' => 'getIvory_GoogleMap_Helper_Collector_Overlay_GroundOverlayService',
+            'ivory.google_map.helper.collector.overlay.icon' => 'getIvory_GoogleMap_Helper_Collector_Overlay_IconService',
+            'ivory.google_map.helper.collector.overlay.icon_sequence' => 'getIvory_GoogleMap_Helper_Collector_Overlay_IconSequenceService',
+            'ivory.google_map.helper.collector.overlay.info_box' => 'getIvory_GoogleMap_Helper_Collector_Overlay_InfoBoxService',
+            'ivory.google_map.helper.collector.overlay.info_window' => 'getIvory_GoogleMap_Helper_Collector_Overlay_InfoWindowService',
+            'ivory.google_map.helper.collector.overlay.info_window.default' => 'getIvory_GoogleMap_Helper_Collector_Overlay_InfoWindow_DefaultService',
+            'ivory.google_map.helper.collector.overlay.marker' => 'getIvory_GoogleMap_Helper_Collector_Overlay_MarkerService',
+            'ivory.google_map.helper.collector.overlay.marker_shape' => 'getIvory_GoogleMap_Helper_Collector_Overlay_MarkerShapeService',
+            'ivory.google_map.helper.collector.overlay.polygon' => 'getIvory_GoogleMap_Helper_Collector_Overlay_PolygonService',
+            'ivory.google_map.helper.collector.overlay.polyline' => 'getIvory_GoogleMap_Helper_Collector_Overlay_PolylineService',
+            'ivory.google_map.helper.collector.overlay.rectangle' => 'getIvory_GoogleMap_Helper_Collector_Overlay_RectangleService',
+            'ivory.google_map.helper.collector.overlay.symbol' => 'getIvory_GoogleMap_Helper_Collector_Overlay_SymbolService',
+            'ivory.google_map.helper.collector.place.autocomplete.base.bound' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Base_BoundService',
+            'ivory.google_map.helper.collector.place.autocomplete.base.coordinate' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Base_CoordinateService',
+            'ivory.google_map.helper.collector.place.autocomplete.event.dom_event' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_DomEventService',
+            'ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_DomEventOnceService',
+            'ivory.google_map.helper.collector.place.autocomplete.event.event' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_EventService',
+            'ivory.google_map.helper.collector.place.autocomplete.event.event_once' => 'getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_EventOnceService',
+            'ivory.google_map.helper.collector.static.encoded_polyline' => 'getIvory_GoogleMap_Helper_Collector_Static_EncodedPolylineService',
+            'ivory.google_map.helper.collector.static.extendable' => 'getIvory_GoogleMap_Helper_Collector_Static_ExtendableService',
+            'ivory.google_map.helper.collector.static.marker' => 'getIvory_GoogleMap_Helper_Collector_Static_MarkerService',
+            'ivory.google_map.helper.collector.static.polyline' => 'getIvory_GoogleMap_Helper_Collector_Static_PolylineService',
+            'ivory.google_map.helper.formatter' => 'getIvory_GoogleMap_Helper_FormatterService',
+            'ivory.google_map.helper.json_builder' => 'getIvory_GoogleMap_Helper_JsonBuilderService',
+            'ivory.google_map.helper.map' => 'getIvory_GoogleMap_Helper_MapService',
+            'ivory.google_map.helper.map.event_dispatcher' => 'getIvory_GoogleMap_Helper_Map_EventDispatcherService',
+            'ivory.google_map.helper.map.static' => 'getIvory_GoogleMap_Helper_Map_StaticService',
+            'ivory.google_map.helper.map.static.event_dispatcher' => 'getIvory_GoogleMap_Helper_Map_Static_EventDispatcherService',
+            'ivory.google_map.helper.place_autocomplete' => 'getIvory_GoogleMap_Helper_PlaceAutocompleteService',
+            'ivory.google_map.helper.place_autocomplete.event_dispatcher' => 'getIvory_GoogleMap_Helper_PlaceAutocomplete_EventDispatcherService',
+            'ivory.google_map.helper.renderer.api' => 'getIvory_GoogleMap_Helper_Renderer_ApiService',
+            'ivory.google_map.helper.renderer.api_init' => 'getIvory_GoogleMap_Helper_Renderer_ApiInitService',
+            'ivory.google_map.helper.renderer.base.bound' => 'getIvory_GoogleMap_Helper_Renderer_Base_BoundService',
+            'ivory.google_map.helper.renderer.base.coordinate' => 'getIvory_GoogleMap_Helper_Renderer_Base_CoordinateService',
+            'ivory.google_map.helper.renderer.base.point' => 'getIvory_GoogleMap_Helper_Renderer_Base_PointService',
+            'ivory.google_map.helper.renderer.base.size' => 'getIvory_GoogleMap_Helper_Renderer_Base_SizeService',
+            'ivory.google_map.helper.renderer.control.custom' => 'getIvory_GoogleMap_Helper_Renderer_Control_CustomService',
+            'ivory.google_map.helper.renderer.control.fullscreen' => 'getIvory_GoogleMap_Helper_Renderer_Control_FullscreenService',
+            'ivory.google_map.helper.renderer.control.manager' => 'getIvory_GoogleMap_Helper_Renderer_Control_ManagerService',
+            'ivory.google_map.helper.renderer.control.map_type' => 'getIvory_GoogleMap_Helper_Renderer_Control_MapTypeService',
+            'ivory.google_map.helper.renderer.control.map_type_style' => 'getIvory_GoogleMap_Helper_Renderer_Control_MapTypeStyleService',
+            'ivory.google_map.helper.renderer.control.position' => 'getIvory_GoogleMap_Helper_Renderer_Control_PositionService',
+            'ivory.google_map.helper.renderer.control.rotate' => 'getIvory_GoogleMap_Helper_Renderer_Control_RotateService',
+            'ivory.google_map.helper.renderer.control.scale' => 'getIvory_GoogleMap_Helper_Renderer_Control_ScaleService',
+            'ivory.google_map.helper.renderer.control.scale_style' => 'getIvory_GoogleMap_Helper_Renderer_Control_ScaleStyleService',
+            'ivory.google_map.helper.renderer.control.street_view' => 'getIvory_GoogleMap_Helper_Renderer_Control_StreetViewService',
+            'ivory.google_map.helper.renderer.control.zoom' => 'getIvory_GoogleMap_Helper_Renderer_Control_ZoomService',
+            'ivory.google_map.helper.renderer.control.zoom_style' => 'getIvory_GoogleMap_Helper_Renderer_Control_ZoomStyleService',
+            'ivory.google_map.helper.renderer.event.dom_event' => 'getIvory_GoogleMap_Helper_Renderer_Event_DomEventService',
+            'ivory.google_map.helper.renderer.event.dom_event_once' => 'getIvory_GoogleMap_Helper_Renderer_Event_DomEventOnceService',
+            'ivory.google_map.helper.renderer.event.event' => 'getIvory_GoogleMap_Helper_Renderer_Event_EventService',
+            'ivory.google_map.helper.renderer.event.event_once' => 'getIvory_GoogleMap_Helper_Renderer_Event_EventOnceService',
+            'ivory.google_map.helper.renderer.geometry.encoding' => 'getIvory_GoogleMap_Helper_Renderer_Geometry_EncodingService',
+            'ivory.google_map.helper.renderer.html.javascript_tag' => 'getIvory_GoogleMap_Helper_Renderer_Html_JavascriptTagService',
+            'ivory.google_map.helper.renderer.html.stylesheet' => 'getIvory_GoogleMap_Helper_Renderer_Html_StylesheetService',
+            'ivory.google_map.helper.renderer.html.stylesheet_tag' => 'getIvory_GoogleMap_Helper_Renderer_Html_StylesheetTagService',
+            'ivory.google_map.helper.renderer.html.tag' => 'getIvory_GoogleMap_Helper_Renderer_Html_TagService',
+            'ivory.google_map.helper.renderer.layer.geo_json' => 'getIvory_GoogleMap_Helper_Renderer_Layer_GeoJsonService',
+            'ivory.google_map.helper.renderer.layer.heatmap' => 'getIvory_GoogleMap_Helper_Renderer_Layer_HeatmapService',
+            'ivory.google_map.helper.renderer.layer.kml' => 'getIvory_GoogleMap_Helper_Renderer_Layer_KmlService',
+            'ivory.google_map.helper.renderer.loader' => 'getIvory_GoogleMap_Helper_Renderer_LoaderService',
+            'ivory.google_map.helper.renderer.map' => 'getIvory_GoogleMap_Helper_Renderer_MapService',
+            'ivory.google_map.helper.renderer.map_bound' => 'getIvory_GoogleMap_Helper_Renderer_MapBoundService',
+            'ivory.google_map.helper.renderer.map_center' => 'getIvory_GoogleMap_Helper_Renderer_MapCenterService',
+            'ivory.google_map.helper.renderer.map_container' => 'getIvory_GoogleMap_Helper_Renderer_MapContainerService',
+            'ivory.google_map.helper.renderer.map_html' => 'getIvory_GoogleMap_Helper_Renderer_MapHtmlService',
+            'ivory.google_map.helper.renderer.map_type_id' => 'getIvory_GoogleMap_Helper_Renderer_MapTypeIdService',
+            'ivory.google_map.helper.renderer.overlay.animation' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_AnimationService',
+            'ivory.google_map.helper.renderer.overlay.circle' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_CircleService',
+            'ivory.google_map.helper.renderer.overlay.encoded_polyline' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_EncodedPolylineService',
+            'ivory.google_map.helper.renderer.overlay.extendable' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_ExtendableService',
+            'ivory.google_map.helper.renderer.overlay.extendable.bounds' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_BoundsService',
+            'ivory.google_map.helper.renderer.overlay.extendable.default_viewport' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_DefaultViewportService',
+            'ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_HeatmapLayerService',
+            'ivory.google_map.helper.renderer.overlay.extendable.path' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_PathService',
+            'ivory.google_map.helper.renderer.overlay.extendable.position' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_PositionService',
+            'ivory.google_map.helper.renderer.overlay.ground_overlay' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_GroundOverlayService',
+            'ivory.google_map.helper.renderer.overlay.icon' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_IconService',
+            'ivory.google_map.helper.renderer.overlay.icon_sequence' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_IconSequenceService',
+            'ivory.google_map.helper.renderer.overlay.info_box' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_InfoBoxService',
+            'ivory.google_map.helper.renderer.overlay.info_window.close' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_CloseService',
+            'ivory.google_map.helper.renderer.overlay.info_window.default' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_DefaultService',
+            'ivory.google_map.helper.renderer.overlay.info_window.open' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_OpenService',
+            'ivory.google_map.helper.renderer.overlay.marker' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerService',
+            'ivory.google_map.helper.renderer.overlay.marker_clusterer' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerClustererService',
+            'ivory.google_map.helper.renderer.overlay.marker_shape' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerShapeService',
+            'ivory.google_map.helper.renderer.overlay.polygon' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_PolygonService',
+            'ivory.google_map.helper.renderer.overlay.polyline' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_PolylineService',
+            'ivory.google_map.helper.renderer.overlay.rectangle' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_RectangleService',
+            'ivory.google_map.helper.renderer.overlay.symbol' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_SymbolService',
+            'ivory.google_map.helper.renderer.overlay.symbol_path' => 'getIvory_GoogleMap_Helper_Renderer_Overlay_SymbolPathService',
+            'ivory.google_map.helper.renderer.place.autocomplete' => 'getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteService',
+            'ivory.google_map.helper.renderer.place.autocomplete_container' => 'getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteContainerService',
+            'ivory.google_map.helper.renderer.place.autocomplete_html' => 'getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteHtmlService',
+            'ivory.google_map.helper.renderer.static.base.coordinate' => 'getIvory_GoogleMap_Helper_Renderer_Static_Base_CoordinateService',
+            'ivory.google_map.helper.renderer.static.base.point' => 'getIvory_GoogleMap_Helper_Renderer_Static_Base_PointService',
+            'ivory.google_map.helper.renderer.static.overlay.encoded_polyline' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolylineService',
+            'ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolyline_StyleService',
+            'ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolyline_ValueService',
+            'ivory.google_map.helper.renderer.static.overlay.extendable' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_ExtendableService',
+            'ivory.google_map.helper.renderer.static.overlay.marker' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_MarkerService',
+            'ivory.google_map.helper.renderer.static.overlay.marker.location' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Marker_LocationService',
+            'ivory.google_map.helper.renderer.static.overlay.marker.style' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Marker_StyleService',
+            'ivory.google_map.helper.renderer.static.overlay.polyline' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_PolylineService',
+            'ivory.google_map.helper.renderer.static.overlay.polyline.location' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Polyline_LocationService',
+            'ivory.google_map.helper.renderer.static.overlay.polyline.style' => 'getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Polyline_StyleService',
+            'ivory.google_map.helper.renderer.static.size' => 'getIvory_GoogleMap_Helper_Renderer_Static_SizeService',
+            'ivory.google_map.helper.renderer.utility.callback' => 'getIvory_GoogleMap_Helper_Renderer_Utility_CallbackService',
+            'ivory.google_map.helper.renderer.utility.object_to_array' => 'getIvory_GoogleMap_Helper_Renderer_Utility_ObjectToArrayService',
+            'ivory.google_map.helper.renderer.utility.requirement' => 'getIvory_GoogleMap_Helper_Renderer_Utility_RequirementService',
+            'ivory.google_map.helper.renderer.utility.requirement_loader' => 'getIvory_GoogleMap_Helper_Renderer_Utility_RequirementLoaderService',
+            'ivory.google_map.helper.renderer.utility.source' => 'getIvory_GoogleMap_Helper_Renderer_Utility_SourceService',
+            'ivory.google_map.helper.subscriber.api_javascript' => 'getIvory_GoogleMap_Helper_Subscriber_ApiJavascriptService',
+            'ivory.google_map.helper.subscriber.base' => 'getIvory_GoogleMap_Helper_Subscriber_BaseService',
+            'ivory.google_map.helper.subscriber.base.bound' => 'getIvory_GoogleMap_Helper_Subscriber_Base_BoundService',
+            'ivory.google_map.helper.subscriber.base.coordinate' => 'getIvory_GoogleMap_Helper_Subscriber_Base_CoordinateService',
+            'ivory.google_map.helper.subscriber.base.point' => 'getIvory_GoogleMap_Helper_Subscriber_Base_PointService',
+            'ivory.google_map.helper.subscriber.base.size' => 'getIvory_GoogleMap_Helper_Subscriber_Base_SizeService',
+            'ivory.google_map.helper.subscriber.control' => 'getIvory_GoogleMap_Helper_Subscriber_ControlService',
+            'ivory.google_map.helper.subscriber.control.custom' => 'getIvory_GoogleMap_Helper_Subscriber_Control_CustomService',
+            'ivory.google_map.helper.subscriber.event' => 'getIvory_GoogleMap_Helper_Subscriber_EventService',
+            'ivory.google_map.helper.subscriber.event.dom_event' => 'getIvory_GoogleMap_Helper_Subscriber_Event_DomEventService',
+            'ivory.google_map.helper.subscriber.event.dom_event_once' => 'getIvory_GoogleMap_Helper_Subscriber_Event_DomEventOnceService',
+            'ivory.google_map.helper.subscriber.event.event' => 'getIvory_GoogleMap_Helper_Subscriber_Event_EventService',
+            'ivory.google_map.helper.subscriber.event.event_once' => 'getIvory_GoogleMap_Helper_Subscriber_Event_EventOnceService',
+            'ivory.google_map.helper.subscriber.layer' => 'getIvory_GoogleMap_Helper_Subscriber_LayerService',
+            'ivory.google_map.helper.subscriber.layer.geo_json' => 'getIvory_GoogleMap_Helper_Subscriber_Layer_GeoJsonService',
+            'ivory.google_map.helper.subscriber.layer.heatmap' => 'getIvory_GoogleMap_Helper_Subscriber_Layer_HeatmapService',
+            'ivory.google_map.helper.subscriber.layer.kml' => 'getIvory_GoogleMap_Helper_Subscriber_Layer_KmlService',
+            'ivory.google_map.helper.subscriber.map' => 'getIvory_GoogleMap_Helper_Subscriber_MapService',
+            'ivory.google_map.helper.subscriber.map_bound' => 'getIvory_GoogleMap_Helper_Subscriber_MapBoundService',
+            'ivory.google_map.helper.subscriber.map_center' => 'getIvory_GoogleMap_Helper_Subscriber_MapCenterService',
+            'ivory.google_map.helper.subscriber.map_container' => 'getIvory_GoogleMap_Helper_Subscriber_MapContainerService',
+            'ivory.google_map.helper.subscriber.map_html' => 'getIvory_GoogleMap_Helper_Subscriber_MapHtmlService',
+            'ivory.google_map.helper.subscriber.map_init' => 'getIvory_GoogleMap_Helper_Subscriber_MapInitService',
+            'ivory.google_map.helper.subscriber.map_javascript' => 'getIvory_GoogleMap_Helper_Subscriber_MapJavascriptService',
+            'ivory.google_map.helper.subscriber.map_stylehseet' => 'getIvory_GoogleMap_Helper_Subscriber_MapStylehseetService',
+            'ivory.google_map.helper.subscriber.overlay' => 'getIvory_GoogleMap_Helper_Subscriber_OverlayService',
+            'ivory.google_map.helper.subscriber.overlay.circle' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_CircleService',
+            'ivory.google_map.helper.subscriber.overlay.encoded_polyline' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_EncodedPolylineService',
+            'ivory.google_map.helper.subscriber.overlay.extendable' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_ExtendableService',
+            'ivory.google_map.helper.subscriber.overlay.ground_overlay' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_GroundOverlayService',
+            'ivory.google_map.helper.subscriber.overlay.icon' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_IconService',
+            'ivory.google_map.helper.subscriber.overlay.icon_sequence' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_IconSequenceService',
+            'ivory.google_map.helper.subscriber.overlay.info_box' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoBoxService',
+            'ivory.google_map.helper.subscriber.overlay.info_window.close' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_CloseService',
+            'ivory.google_map.helper.subscriber.overlay.info_window.default' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_DefaultService',
+            'ivory.google_map.helper.subscriber.overlay.info_window.open' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_OpenService',
+            'ivory.google_map.helper.subscriber.overlay.marker' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerService',
+            'ivory.google_map.helper.subscriber.overlay.marker.info_window.open' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_Marker_InfoWindow_OpenService',
+            'ivory.google_map.helper.subscriber.overlay.marker_clusterer' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerClustererService',
+            'ivory.google_map.helper.subscriber.overlay.marker_shape' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerShapeService',
+            'ivory.google_map.helper.subscriber.overlay.polygon' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_PolygonService',
+            'ivory.google_map.helper.subscriber.overlay.polyline' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_PolylineService',
+            'ivory.google_map.helper.subscriber.overlay.rectangle' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_RectangleService',
+            'ivory.google_map.helper.subscriber.overlay.symbol' => 'getIvory_GoogleMap_Helper_Subscriber_Overlay_SymbolService',
+            'ivory.google_map.helper.subscriber.place.autocomplete' => 'getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.base' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_BaseService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.base.bound' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Base_BoundService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Base_CoordinateService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.event' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_EventService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_DomEventService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_DomEventOnceService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.event.event' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_EventService',
+            'ivory.google_map.helper.subscriber.place.autocomplete.event.event_once' => 'getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_EventOnceService',
+            'ivory.google_map.helper.subscriber.place.autocomplete_container' => 'getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteContainerService',
+            'ivory.google_map.helper.subscriber.place.autocomplete_html' => 'getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteHtmlService',
+            'ivory.google_map.helper.subscriber.place.autocomplete_init' => 'getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteInitService',
+            'ivory.google_map.helper.subscriber.place.autocomplete_javascript' => 'getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteJavascriptService',
+            'ivory.google_map.helper.subscriber.static' => 'getIvory_GoogleMap_Helper_Subscriber_StaticService',
+            'ivory.google_map.helper.subscriber.static.center' => 'getIvory_GoogleMap_Helper_Subscriber_Static_CenterService',
+            'ivory.google_map.helper.subscriber.static.encoded_polyline' => 'getIvory_GoogleMap_Helper_Subscriber_Static_EncodedPolylineService',
+            'ivory.google_map.helper.subscriber.static.extendable' => 'getIvory_GoogleMap_Helper_Subscriber_Static_ExtendableService',
+            'ivory.google_map.helper.subscriber.static.format' => 'getIvory_GoogleMap_Helper_Subscriber_Static_FormatService',
+            'ivory.google_map.helper.subscriber.static.key' => 'getIvory_GoogleMap_Helper_Subscriber_Static_KeyService',
+            'ivory.google_map.helper.subscriber.static.marker' => 'getIvory_GoogleMap_Helper_Subscriber_Static_MarkerService',
+            'ivory.google_map.helper.subscriber.static.polyline' => 'getIvory_GoogleMap_Helper_Subscriber_Static_PolylineService',
+            'ivory.google_map.helper.subscriber.static.scale' => 'getIvory_GoogleMap_Helper_Subscriber_Static_ScaleService',
+            'ivory.google_map.helper.subscriber.static.size' => 'getIvory_GoogleMap_Helper_Subscriber_Static_SizeService',
+            'ivory.google_map.helper.subscriber.static.type' => 'getIvory_GoogleMap_Helper_Subscriber_Static_TypeService',
+            'ivory.google_map.helper.subscriber.static.zoom' => 'getIvory_GoogleMap_Helper_Subscriber_Static_ZoomService',
+            'ivory.google_map.helper.subscriber.utility.object_to_array' => 'getIvory_GoogleMap_Helper_Subscriber_Utility_ObjectToArrayService',
+            'ivory.google_map.twig.extension.api' => 'getIvory_GoogleMap_Twig_Extension_ApiService',
+            'ivory.google_map.twig.extension.map' => 'getIvory_GoogleMap_Twig_Extension_MapService',
+            'ivory.google_map.twig.extension.map.static' => 'getIvory_GoogleMap_Twig_Extension_Map_StaticService',
+            'ivory.google_map.twig.extension.place_autocomplete' => 'getIvory_GoogleMap_Twig_Extension_PlaceAutocompleteService',
+            'ivory.serializer' => 'getIvory_SerializerService',
+            'ivory.serializer.accessor' => 'getIvory_Serializer_AccessorService',
+            'ivory.serializer.event.dispatcher' => 'getIvory_Serializer_Event_DispatcherService',
+            'ivory.serializer.instantiator' => 'getIvory_Serializer_InstantiatorService',
+            'ivory.serializer.mapping.factory.default' => 'getIvory_Serializer_Mapping_Factory_DefaultService',
+            'ivory.serializer.mapping.factory.event' => 'getIvory_Serializer_Mapping_Factory_EventService',
+            'ivory.serializer.mapping.loader' => 'getIvory_Serializer_Mapping_LoaderService',
+            'ivory.serializer.mapping.loader.annotation' => 'getIvory_Serializer_Mapping_Loader_AnnotationService',
+            'ivory.serializer.mapping.loader.reflection' => 'getIvory_Serializer_Mapping_Loader_ReflectionService',
+            'ivory.serializer.mutator' => 'getIvory_Serializer_MutatorService',
+            'ivory.serializer.navigator.default' => 'getIvory_Serializer_Navigator_DefaultService',
+            'ivory.serializer.navigator.event' => 'getIvory_Serializer_Navigator_EventService',
+            'ivory.serializer.registry.type' => 'getIvory_Serializer_Registry_TypeService',
+            'ivory.serializer.registry.visitor' => 'getIvory_Serializer_Registry_VisitorService',
+            'ivory.serializer.type.array' => 'getIvory_Serializer_Type_ArrayService',
+            'ivory.serializer.type.boolean' => 'getIvory_Serializer_Type_BooleanService',
+            'ivory.serializer.type.closure' => 'getIvory_Serializer_Type_ClosureService',
+            'ivory.serializer.type.date_time' => 'getIvory_Serializer_Type_DateTimeService',
+            'ivory.serializer.type.exception' => 'getIvory_Serializer_Type_ExceptionService',
+            'ivory.serializer.type.float' => 'getIvory_Serializer_Type_FloatService',
+            'ivory.serializer.type.form' => 'getIvory_Serializer_Type_FormService',
+            'ivory.serializer.type.form_error' => 'getIvory_Serializer_Type_FormErrorService',
+            'ivory.serializer.type.guesser' => 'getIvory_Serializer_Type_GuesserService',
+            'ivory.serializer.type.integer' => 'getIvory_Serializer_Type_IntegerService',
+            'ivory.serializer.type.lexer' => 'getIvory_Serializer_Type_LexerService',
+            'ivory.serializer.type.null' => 'getIvory_Serializer_Type_NullService',
+            'ivory.serializer.type.object' => 'getIvory_Serializer_Type_ObjectService',
+            'ivory.serializer.type.parser' => 'getIvory_Serializer_Type_ParserService',
+            'ivory.serializer.type.resource' => 'getIvory_Serializer_Type_ResourceService',
+            'ivory.serializer.type.std_class' => 'getIvory_Serializer_Type_StdClassService',
+            'ivory.serializer.type.string' => 'getIvory_Serializer_Type_StringService',
+            'ivory.serializer.visitor.csv.deserialization' => 'getIvory_Serializer_Visitor_Csv_DeserializationService',
+            'ivory.serializer.visitor.csv.serialization' => 'getIvory_Serializer_Visitor_Csv_SerializationService',
+            'ivory.serializer.visitor.json.deserialization' => 'getIvory_Serializer_Visitor_Json_DeserializationService',
+            'ivory.serializer.visitor.json.serialization' => 'getIvory_Serializer_Visitor_Json_SerializationService',
+            'ivory.serializer.visitor.xml.deserialization' => 'getIvory_Serializer_Visitor_Xml_DeserializationService',
+            'ivory.serializer.visitor.xml.serialization' => 'getIvory_Serializer_Visitor_Xml_SerializationService',
+            'ivory.serializer.visitor.yaml.deserialization' => 'getIvory_Serializer_Visitor_Yaml_DeserializationService',
+            'ivory.serializer.visitor.yaml.serialization' => 'getIvory_Serializer_Visitor_Yaml_SerializationService',
             'kernel.class_cache.cache_warmer' => 'getKernel_ClassCache_CacheWarmerService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
@@ -192,6 +445,7 @@ class appDevDebugProjectContainer extends Container
             'security.authentication.guard_handler' => 'getSecurity_Authentication_GuardHandlerService',
             'security.authentication.manager' => 'getSecurity_Authentication_ManagerService',
             'security.authentication.provider.anonymous.main' => 'getSecurity_Authentication_Provider_Anonymous_MainService',
+            'security.authentication.provider.dao.main' => 'getSecurity_Authentication_Provider_Dao_MainService',
             'security.authentication.trust_resolver' => 'getSecurity_Authentication_TrustResolverService',
             'security.authentication_utils' => 'getSecurity_AuthenticationUtilsService',
             'security.authorization_checker' => 'getSecurity_AuthorizationCheckerService',
@@ -207,6 +461,7 @@ class appDevDebugProjectContainer extends Container
             'security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d' => 'getSecurity_RequestMatcher_5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1dService',
             'security.role_hierarchy' => 'getSecurity_RoleHierarchyService',
             'security.token_storage' => 'getSecurity_TokenStorageService',
+            'security.user.provider.concrete.in_memory' => 'getSecurity_User_Provider_Concrete_InMemoryService',
             'security.user_value_resolver' => 'getSecurity_UserValueResolverService',
             'security.validator.user_password' => 'getSecurity_Validator_UserPasswordService',
             'sensio_distribution.security_checker' => 'getSensioDistribution_SecurityCheckerService',
@@ -220,6 +475,7 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.security.listener' => 'getSensioFrameworkExtra_Security_ListenerService',
             'sensio_framework_extra.view.guesser' => 'getSensioFrameworkExtra_View_GuesserService',
             'sensio_framework_extra.view.listener' => 'getSensioFrameworkExtra_View_ListenerService',
+            'service_locator.adb387edf44001656cf7d6606ecd3a0f' => 'getServiceLocator_Adb387edf44001656cf7d6606ecd3a0fService',
             'service_locator.e64d23c3bf770e2cf44b71643280668d' => 'getServiceLocator_E64d23c3bf770e2cf44b71643280668dService',
             'session' => 'getSessionService',
             'session.handler' => 'getSession_HandlerService',
@@ -269,8 +525,8 @@ class appDevDebugProjectContainer extends Container
             'web_profiler.debug_toolbar' => 'getWebProfiler_DebugToolbarService',
         );
         $this->privates = array(
-            '1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' => true,
-            '2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' => true,
+            '1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' => true,
+            '2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' => true,
             'annotations.reader' => true,
             'argument_resolver.default' => true,
             'argument_resolver.request' => true,
@@ -302,6 +558,7 @@ class appDevDebugProjectContainer extends Container
             'form.type_extension.submit.validator' => true,
             'form.type_extension.upload.validator' => true,
             'form.type_guesser.validator' => true,
+            'httplug.collector.collector' => true,
             'resolve_controller_name_subscriber' => true,
             'router.request_context' => true,
             'security.access.authenticated_voter' => true,
@@ -309,12 +566,15 @@ class appDevDebugProjectContainer extends Container
             'security.access.simple_role_voter' => true,
             'security.authentication.manager' => true,
             'security.authentication.provider.anonymous.main' => true,
+            'security.authentication.provider.dao.main' => true,
             'security.authentication.trust_resolver' => true,
             'security.firewall.map' => true,
             'security.logout_url_generator' => true,
             'security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d' => true,
             'security.role_hierarchy' => true,
+            'security.user.provider.concrete.in_memory' => true,
             'security.user_value_resolver' => true,
+            'service_locator.adb387edf44001656cf7d6606ecd3a0f' => true,
             'service_locator.e64d23c3bf770e2cf44b71643280668d' => true,
             'session.storage.metadata_bag' => true,
             'swiftmailer.mailer.default.transport.eventdispatcher' => true,
@@ -329,6 +589,12 @@ class appDevDebugProjectContainer extends Container
             'doctrine.orm.default_result_cache' => 'doctrine_cache.providers.doctrine.orm.default_result_cache',
             'doctrine.orm.entity_manager' => 'doctrine.orm.default_entity_manager',
             'event_dispatcher' => 'debug.event_dispatcher',
+            'httplug.client' => 'httplug.client.default',
+            'httplug.message_factory' => 'httplug.message_factory.default',
+            'httplug.stream_factory' => 'httplug.stream_factory.default',
+            'httplug.uri_factory' => 'httplug.uri_factory.default',
+            'ivory.serializer.mapping.factory' => 'ivory.serializer.mapping.factory.default',
+            'ivory.serializer.navigator' => 'ivory.serializer.navigator.event',
             'mailer' => 'swiftmailer.mailer.default',
             'session.storage' => 'session.storage.native',
             'swiftmailer.mailer' => 'swiftmailer.mailer.default',
@@ -366,13 +632,23 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the public 'AppBundle\Controller\DefaultController' shared autowired service.
+     * Gets the public 'RtecaBundle\Controller\DefaultController' shared autowired service.
      *
-     * @return \AppBundle\Controller\DefaultController
+     * @return \RtecaBundle\Controller\DefaultController
      */
-    protected function getAppBundle_Controller_DefaultControllerService()
+    protected function getRtecaBundle_Controller_DefaultControllerService()
     {
-        return $this->services['AppBundle\Controller\DefaultController'] = new \AppBundle\Controller\DefaultController();
+        return $this->services['RtecaBundle\Controller\DefaultController'] = new \RtecaBundle\Controller\DefaultController();
+    }
+
+    /**
+     * Gets the public 'RtecaBundle\Controller\SecurityController' shared autowired service.
+     *
+     * @return \RtecaBundle\Controller\SecurityController
+     */
+    protected function getRtecaBundle_Controller_SecurityControllerService()
+    {
+        return $this->services['RtecaBundle\Controller\SecurityController'] = new \RtecaBundle\Controller\SecurityController();
     }
 
     /**
@@ -480,8 +756,8 @@ class appDevDebugProjectContainer extends Container
     protected function getConfigCacheFactoryService()
     {
         return $this->services['config_cache_factory'] = new \Symfony\Component\Config\ResourceCheckerConfigCacheFactory(new RewindableGenerator(function () {
-            yield 0 => ${($_ = isset($this->services['1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab']) ? $this->services['1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab'] : $this->get1613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService()) && false ?: '_'};
-            yield 1 => ${($_ = isset($this->services['2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab']) ? $this->services['2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab'] : $this->get2613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService()) && false ?: '_'};
+            yield 0 => ${($_ = isset($this->services['1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e']) ? $this->services['1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e'] : $this->get18d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService()) && false ?: '_'};
+            yield 1 => ${($_ = isset($this->services['2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e']) ? $this->services['2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e'] : $this->get28d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService()) && false ?: '_'};
         }, 2));
     }
 
@@ -492,7 +768,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getConsole_Command_SymfonyBundleSecuritybundleCommandUserpasswordencodercommandService()
     {
-        return $this->services['console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand'] = new \Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand(${($_ = isset($this->services['security.encoder_factory']) ? $this->services['security.encoder_factory'] : $this->get('security.encoder_factory')) && false ?: '_'}, array());
+        return $this->services['console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand'] = new \Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand(${($_ = isset($this->services['security.encoder_factory']) ? $this->services['security.encoder_factory'] : $this->get('security.encoder_factory')) && false ?: '_'}, array(0 => 'Symfony\\Component\\Security\\Core\\User\\User'));
     }
 
     /**
@@ -756,6 +1032,12 @@ class appDevDebugProjectContainer extends Container
         $instance->addListener('kernel.controller', array(0 => function () {
             return ${($_ = isset($this->services['sensio_framework_extra.security.listener']) ? $this->services['sensio_framework_extra.security.listener'] : $this->get('sensio_framework_extra.security.listener')) && false ?: '_'};
         }, 1 => 'onKernelController'), 0);
+        $instance->addListener('kernel.request', array(0 => function () {
+            return ${($_ = isset($this->services['httplug.strategy']) ? $this->services['httplug.strategy'] : $this->get('httplug.strategy')) && false ?: '_'};
+        }, 1 => 'onEvent'), 1024);
+        $instance->addListener('console.command', array(0 => function () {
+            return ${($_ = isset($this->services['httplug.strategy']) ? $this->services['httplug.strategy'] : $this->get('httplug.strategy')) && false ?: '_'};
+        }, 1 => 'onEvent'), 1024);
         $instance->addListener('console.command', array(0 => function () {
             return ${($_ = isset($this->services['debug.dump_listener']) ? $this->services['debug.dump_listener'] : $this->get('debug.dump_listener')) && false ?: '_'};
         }, 1 => 'configure'), 1024);
@@ -849,7 +1131,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
         $c->addEventListener(array(0 => 'loadClassMetadata'), ${($_ = isset($this->services['doctrine.orm.default_listeners.attach_entity_listeners']) ? $this->services['doctrine.orm.default_listeners.attach_entity_listeners'] : $this->get('doctrine.orm.default_listeners.attach_entity_listeners')) && false ?: '_'});
 
-        return $this->services['doctrine.dbal.default_connection'] = ${($_ = isset($this->services['doctrine.dbal.connection_factory']) ? $this->services['doctrine.dbal.connection_factory'] : $this->get('doctrine.dbal.connection_factory')) && false ?: '_'}->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3306, 'dbname' => 'rastreiateca', 'user' => 'rastreiateca', 'password' => 'JfCuAGF1YjjXxcpr', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
+        return $this->services['doctrine.dbal.default_connection'] = ${($_ = isset($this->services['doctrine.dbal.connection_factory']) ? $this->services['doctrine.dbal.connection_factory'] : $this->get('doctrine.dbal.connection_factory')) && false ?: '_'}->createConnection(array('driver' => 'pdo_mysql', 'host' => 'localhost', 'port' => 3306, 'dbname' => 'rastreiateca', 'user' => 'root', 'password' => 'm230889m', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
     }
 
     /**
@@ -869,22 +1151,25 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService($lazyLoad = true)
     {
-        $a = new \Doctrine\ORM\Configuration();
-        $a->setEntityNamespaces(array());
-        $a->setMetadataCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache')) && false ?: '_'});
-        $a->setQueryCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_query_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_query_cache')) && false ?: '_'});
-        $a->setResultCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_result_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_result_cache')) && false ?: '_'});
-        $a->setMetadataDriverImpl(new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain());
-        $a->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $a->setProxyNamespace('Proxies');
-        $a->setAutoGenerateProxyClasses(true);
-        $a->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $a->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $a->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
-        $a->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
-        $a->setEntityListenerResolver(${($_ = isset($this->services['doctrine.orm.default_entity_listener_resolver']) ? $this->services['doctrine.orm.default_entity_listener_resolver'] : $this->get('doctrine.orm.default_entity_listener_resolver')) && false ?: '_'});
+        $a = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
+        $a->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver(${($_ = isset($this->services['annotation_reader']) ? $this->services['annotation_reader'] : $this->get('annotation_reader')) && false ?: '_'}, array(0 => ($this->targetDirs[3].'/src/RtecaBundle/Entity'))), 'RtecaBundle\\Entity');
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create(${($_ = isset($this->services['doctrine.dbal.default_connection']) ? $this->services['doctrine.dbal.default_connection'] : $this->get('doctrine.dbal.default_connection')) && false ?: '_'}, $a);
+        $b = new \Doctrine\ORM\Configuration();
+        $b->setEntityNamespaces(array('RtecaBundle' => 'RtecaBundle\\Entity'));
+        $b->setMetadataCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache')) && false ?: '_'});
+        $b->setQueryCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_query_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_query_cache')) && false ?: '_'});
+        $b->setResultCacheImpl(${($_ = isset($this->services['doctrine_cache.providers.doctrine.orm.default_result_cache']) ? $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] : $this->get('doctrine_cache.providers.doctrine.orm.default_result_cache')) && false ?: '_'});
+        $b->setMetadataDriverImpl($a);
+        $b->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $b->setProxyNamespace('Proxies');
+        $b->setAutoGenerateProxyClasses(true);
+        $b->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $b->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $b->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
+        $b->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
+        $b->setEntityListenerResolver(${($_ = isset($this->services['doctrine.orm.default_entity_listener_resolver']) ? $this->services['doctrine.orm.default_entity_listener_resolver'] : $this->get('doctrine.orm.default_entity_listener_resolver')) && false ?: '_'});
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create(${($_ = isset($this->services['doctrine.dbal.default_connection']) ? $this->services['doctrine.dbal.default_connection'] : $this->get('doctrine.dbal.default_connection')) && false ?: '_'}, $b);
 
         ${($_ = isset($this->services['doctrine.orm.default_manager_configurator']) ? $this->services['doctrine.orm.default_manager_configurator'] : $this->get('doctrine.orm.default_manager_configurator')) && false ?: '_'}->configure($instance);
 
@@ -950,7 +1235,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_25c1c4930af6a65adfc4f6de7e5d371e3af712d9dcd17845042b2a26b15ad2cf');
+        $instance->setNamespace('sf2orm_default_04cd3f37b9b6e23344295015b2a18e0c0337fef82bb3bc9410c8ad2af6e9c086');
 
         return $instance;
     }
@@ -964,7 +1249,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_25c1c4930af6a65adfc4f6de7e5d371e3af712d9dcd17845042b2a26b15ad2cf');
+        $instance->setNamespace('sf2orm_default_04cd3f37b9b6e23344295015b2a18e0c0337fef82bb3bc9410c8ad2af6e9c086');
 
         return $instance;
     }
@@ -978,7 +1263,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_25c1c4930af6a65adfc4f6de7e5d371e3af712d9dcd17845042b2a26b15ad2cf');
+        $instance->setNamespace('sf2orm_default_04cd3f37b9b6e23344295015b2a18e0c0337fef82bb3bc9410c8ad2af6e9c086');
 
         return $instance;
     }
@@ -1040,7 +1325,9 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType' => function () {
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('Ivory\\GoogleMapBundle\\Form\\Type\\PlaceAutocompleteType' => function () {
+            return ${($_ = isset($this->services['ivory.google_map.form.type.place_autocomplete']) ? $this->services['ivory.google_map.form.type.place_autocomplete'] : $this->get('ivory.google_map.form.type.place_autocomplete')) && false ?: '_'};
+        }, 'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType' => function () {
             return ${($_ = isset($this->services['form.type.entity']) ? $this->services['form.type.entity'] : $this->get('form.type.entity')) && false ?: '_'};
         }, 'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType' => function () {
             return ${($_ = isset($this->services['form.type.choice']) ? $this->services['form.type.choice'] : $this->getForm_Type_ChoiceService()) && false ?: '_'};
@@ -1585,6 +1872,2881 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the public 'httplug.async_client.default' shared service.
+     *
+     * @return \Http\Client\HttpAsyncClient
+     */
+    protected function getHttplug_AsyncClient_DefaultService()
+    {
+        return $this->services['httplug.async_client.default'] = \Http\Discovery\HttpAsyncClientDiscovery::find();
+    }
+
+    /**
+     * Gets the public 'httplug.auto_discovery.auto_discovered_client' shared service.
+     *
+     * @return \Http\Client\Common\PluginClient
+     */
+    protected function getHttplug_AutoDiscovery_AutoDiscoveredClientService()
+    {
+        $a = ${($_ = isset($this->services['httplug.collector.collector']) ? $this->services['httplug.collector.collector'] : $this->getHttplug_Collector_CollectorService()) && false ?: '_'};
+
+        $b = new \Http\Message\Formatter\FullHttpMessageFormatter(0);
+
+        $c = new \Http\Message\Formatter\CurlCommandFormatter();
+
+        $d = new \Http\HttplugBundle\Collector\Formatter($b, $c);
+
+        return $this->services['httplug.auto_discovery.auto_discovered_client'] = new \Http\Client\Common\PluginClient(new \Http\HttplugBundle\Collector\ProfileClient(\Http\Discovery\HttpClientDiscovery::find(), $a, $d, ${($_ = isset($this->services['debug.stopwatch']) ? $this->services['debug.stopwatch'] : $this->get('debug.stopwatch')) && false ?: '_'}), array(0 => new \Http\HttplugBundle\Collector\StackPlugin($a, $d, 'auto_discovered_client')));
+    }
+
+    /**
+     * Gets the public 'httplug.client.default' shared service.
+     *
+     * @return \Http\Client\HttpClient
+     */
+    protected function getHttplug_Client_DefaultService()
+    {
+        return $this->services['httplug.client.default'] = \Http\Discovery\HttpClientDiscovery::find();
+    }
+
+    /**
+     * Gets the public 'httplug.message_factory.default' shared service.
+     *
+     * @return \Http\Message\MessageFactory
+     */
+    protected function getHttplug_MessageFactory_DefaultService()
+    {
+        return $this->services['httplug.message_factory.default'] = \Http\Discovery\MessageFactoryDiscovery::find();
+    }
+
+    /**
+     * Gets the public 'httplug.strategy' shared service.
+     *
+     * @return \Http\HttplugBundle\Discovery\ConfiguredClientsStrategy
+     */
+    protected function getHttplug_StrategyService()
+    {
+        return $this->services['httplug.strategy'] = new \Http\HttplugBundle\Discovery\ConfiguredClientsStrategy(${($_ = isset($this->services['httplug.auto_discovery.auto_discovered_client']) ? $this->services['httplug.auto_discovery.auto_discovered_client'] : $this->get('httplug.auto_discovery.auto_discovered_client', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, NULL);
+    }
+
+    /**
+     * Gets the public 'httplug.stream_factory.default' shared service.
+     *
+     * @return \Http\Message\StreamFactory
+     */
+    protected function getHttplug_StreamFactory_DefaultService()
+    {
+        return $this->services['httplug.stream_factory.default'] = \Http\Discovery\StreamFactoryDiscovery::find();
+    }
+
+    /**
+     * Gets the public 'httplug.uri_factory.default' shared service.
+     *
+     * @return \Http\Message\UriFactory
+     */
+    protected function getHttplug_UriFactory_DefaultService()
+    {
+        return $this->services['httplug.uri_factory.default'] = \Http\Discovery\UriFactoryDiscovery::find();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.form.type.place_autocomplete' shared service.
+     *
+     * @return \Ivory\GoogleMapBundle\Form\Type\PlaceAutocompleteType
+     */
+    protected function getIvory_GoogleMap_Form_Type_PlaceAutocompleteService()
+    {
+        return $this->services['ivory.google_map.form.type.place_autocomplete'] = new \Ivory\GoogleMapBundle\Form\Type\PlaceAutocompleteType();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.api' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\ApiHelper
+     */
+    protected function getIvory_GoogleMap_Helper_ApiService()
+    {
+        return $this->services['ivory.google_map.helper.api'] = new \Ivory\GoogleMap\Helper\ApiHelper(${($_ = isset($this->services['ivory.google_map.helper.api.event_dispatcher']) ? $this->services['ivory.google_map.helper.api.event_dispatcher'] : $this->get('ivory.google_map.helper.api.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.api.event_dispatcher' shared service.
+     *
+     * @return \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+     */
+    protected function getIvory_GoogleMap_Helper_Api_EventDispatcherService()
+    {
+        $this->services['ivory.google_map.helper.api.event_dispatcher'] = $instance = new \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher($this);
+
+        $instance->addListener('api.javascript', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.api_javascript']) ? $this->services['ivory.google_map.helper.subscriber.api_javascript'] : $this->get('ivory.google_map.helper.subscriber.api_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.heatmap']) ? $this->services['ivory.google_map.helper.subscriber.layer.heatmap'] : $this->get('ivory.google_map.helper.subscriber.layer.heatmap')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.layer.heatmap_layer', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.heatmap']) ? $this->services['ivory.google_map.helper.subscriber.layer.heatmap'] : $this->get('ivory.google_map.helper.subscriber.layer.heatmap')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_javascript']) ? $this->services['ivory.google_map.helper.subscriber.map_javascript'] : $this->get('ivory.google_map.helper.subscriber.map_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_javascript']) ? $this->services['ivory.google_map.helper.subscriber.map_javascript'] : $this->get('ivory.google_map.helper.subscriber.map_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.subscriber.overlay.encoded_polyline')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.encoded_polyline', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.subscriber.overlay.encoded_polyline')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_box']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_box'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_box')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.info_window', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_box']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_box'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_box')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker_clusterer')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.marker_cluster', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker_clusterer')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.autocomplete', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('place_autocomplete.javascript', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.base.bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Base\BoundCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Base_BoundService()
+    {
+        return $this->services['ivory.google_map.helper.collector.base.bound'] = new \Ivory\GoogleMap\Helper\Collector\Base\BoundCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.ground_overlay']) ? $this->services['ivory.google_map.helper.collector.overlay.ground_overlay'] : $this->get('ivory.google_map.helper.collector.overlay.ground_overlay')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.rectangle']) ? $this->services['ivory.google_map.helper.collector.overlay.rectangle'] : $this->get('ivory.google_map.helper.collector.overlay.rectangle')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Base\CoordinateCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.collector.base.coordinate'] = new \Ivory\GoogleMap\Helper\Collector\Base\CoordinateCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.base.bound']) ? $this->services['ivory.google_map.helper.collector.base.bound'] : $this->get('ivory.google_map.helper.collector.base.bound')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.circle']) ? $this->services['ivory.google_map.helper.collector.overlay.circle'] : $this->get('ivory.google_map.helper.collector.overlay.circle')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_window']) ? $this->services['ivory.google_map.helper.collector.overlay.info_window'] : $this->get('ivory.google_map.helper.collector.overlay.info_window')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.polygon']) ? $this->services['ivory.google_map.helper.collector.overlay.polygon'] : $this->get('ivory.google_map.helper.collector.overlay.polygon')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.polyline']) ? $this->services['ivory.google_map.helper.collector.overlay.polyline'] : $this->get('ivory.google_map.helper.collector.overlay.polyline')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.layer.heatmap']) ? $this->services['ivory.google_map.helper.collector.layer.heatmap'] : $this->get('ivory.google_map.helper.collector.layer.heatmap')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.base.point' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Base\PointCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Base_PointService()
+    {
+        return $this->services['ivory.google_map.helper.collector.base.point'] = new \Ivory\GoogleMap\Helper\Collector\Base\PointCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.base.size' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Base\SizeCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Base_SizeService()
+    {
+        return $this->services['ivory.google_map.helper.collector.base.size'] = new \Ivory\GoogleMap\Helper\Collector\Base\SizeCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_window']) ? $this->services['ivory.google_map.helper.collector.overlay.info_window'] : $this->get('ivory.google_map.helper.collector.overlay.info_window')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.icon']) ? $this->services['ivory.google_map.helper.collector.overlay.icon'] : $this->get('ivory.google_map.helper.collector.overlay.icon')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.control.custom' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Control\CustomControlCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Control_CustomService()
+    {
+        return $this->services['ivory.google_map.helper.collector.control.custom'] = new \Ivory\GoogleMap\Helper\Collector\Control\CustomControlCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.event.dom_event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Event\DomEventCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Event_DomEventService()
+    {
+        return $this->services['ivory.google_map.helper.collector.event.dom_event'] = new \Ivory\GoogleMap\Helper\Collector\Event\DomEventCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.event.dom_event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Event\DomEventOnceCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Event_DomEventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.collector.event.dom_event_once'] = new \Ivory\GoogleMap\Helper\Collector\Event\DomEventOnceCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.event.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Event\EventCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Event_EventService()
+    {
+        return $this->services['ivory.google_map.helper.collector.event.event'] = new \Ivory\GoogleMap\Helper\Collector\Event\EventCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.event.event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Event\EventOnceCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Event_EventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.collector.event.event_once'] = new \Ivory\GoogleMap\Helper\Collector\Event\EventOnceCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.layer.geo_json' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Layer\GeoJsonLayerCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Layer_GeoJsonService()
+    {
+        return $this->services['ivory.google_map.helper.collector.layer.geo_json'] = new \Ivory\GoogleMap\Helper\Collector\Layer\GeoJsonLayerCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.layer.heatmap' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Layer\HeatmapLayerCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Layer_HeatmapService()
+    {
+        return $this->services['ivory.google_map.helper.collector.layer.heatmap'] = new \Ivory\GoogleMap\Helper\Collector\Layer\HeatmapLayerCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.layer.kml' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Layer\KmlLayerCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Layer_KmlService()
+    {
+        return $this->services['ivory.google_map.helper.collector.layer.kml'] = new \Ivory\GoogleMap\Helper\Collector\Layer\KmlLayerCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.circle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\CircleCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_CircleService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.circle'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\CircleCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\EncodedPolylineCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\EncodedPolylineCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\ExtendableCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_ExtendableService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.extendable'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\ExtendableCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.ground_overlay' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\GroundOverlayCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_GroundOverlayService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.ground_overlay'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\GroundOverlayCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.icon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\IconCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_IconService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.icon'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\IconCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.icon_sequence' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\IconSequenceCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_IconSequenceService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.icon_sequence'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\IconSequenceCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.polyline']) ? $this->services['ivory.google_map.helper.collector.overlay.polyline'] : $this->get('ivory.google_map.helper.collector.overlay.polyline')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.info_box' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\InfoBoxCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_InfoBoxService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.info_box'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\InfoBoxCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.info_window' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\InfoWindowCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_InfoWindowService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.info_window'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\InfoWindowCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.info_window.default' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\DefaultInfoWindowCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_InfoWindow_DefaultService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.info_window.default'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\DefaultInfoWindowCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\MarkerCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.marker'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\MarkerCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.marker_shape' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\MarkerShapeCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_MarkerShapeService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.marker_shape'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\MarkerShapeCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.polygon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\PolygonCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_PolygonService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.polygon'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\PolygonCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\PolylineCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.polyline'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\PolylineCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.rectangle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\RectangleCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_RectangleService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.rectangle'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\RectangleCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.overlay.symbol' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Overlay\SymbolCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Overlay_SymbolService()
+    {
+        return $this->services['ivory.google_map.helper.collector.overlay.symbol'] = new \Ivory\GoogleMap\Helper\Collector\Overlay\SymbolCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.icon_sequence']) ? $this->services['ivory.google_map.helper.collector.overlay.icon_sequence'] : $this->get('ivory.google_map.helper.collector.overlay.icon_sequence')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.base.bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteBoundCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Base_BoundService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.base.bound'] = new \Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteBoundCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteCoordinateCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.base.coordinate'] = new \Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteCoordinateCollector(${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.base.bound']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.base.bound'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.base.bound')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.event.dom_event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_DomEventService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event'] = new \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventOnceCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_DomEventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once'] = new \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventOnceCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.event.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_EventService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.event.event'] = new \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.place.autocomplete.event.event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventOnceCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Place_Autocomplete_Event_EventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.collector.place.autocomplete.event.event_once'] = new \Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventOnceCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.static.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Image\EncodedPolylineCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Static_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.collector.static.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Collector\Image\EncodedPolylineCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.static.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Image\ExtendableCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Static_ExtendableService()
+    {
+        return $this->services['ivory.google_map.helper.collector.static.extendable'] = new \Ivory\GoogleMap\Helper\Collector\Image\ExtendableCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.static.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Image\MarkerCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Static_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.collector.static.marker'] = new \Ivory\GoogleMap\Helper\Collector\Image\MarkerCollector(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.marker.style']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.marker.style'] : $this->get('ivory.google_map.helper.renderer.static.overlay.marker.style')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.collector.static.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Collector\Image\PolylineCollector
+     */
+    protected function getIvory_GoogleMap_Helper_Collector_Static_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.collector.static.polyline'] = new \Ivory\GoogleMap\Helper\Collector\Image\PolylineCollector();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.formatter' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Formatter\Formatter
+     */
+    protected function getIvory_GoogleMap_Helper_FormatterService()
+    {
+        return $this->services['ivory.google_map.helper.formatter'] = new \Ivory\GoogleMap\Helper\Formatter\Formatter(true);
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.json_builder' shared service.
+     *
+     * @return \Ivory\JsonBuilder\JsonBuilder
+     */
+    protected function getIvory_GoogleMap_Helper_JsonBuilderService()
+    {
+        return $this->services['ivory.google_map.helper.json_builder'] = new \Ivory\JsonBuilder\JsonBuilder();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.map' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\MapHelper
+     */
+    protected function getIvory_GoogleMap_Helper_MapService()
+    {
+        return $this->services['ivory.google_map.helper.map'] = new \Ivory\GoogleMap\Helper\MapHelper(${($_ = isset($this->services['ivory.google_map.helper.map.event_dispatcher']) ? $this->services['ivory.google_map.helper.map.event_dispatcher'] : $this->get('ivory.google_map.helper.map.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.map.event_dispatcher' shared service.
+     *
+     * @return \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+     */
+    protected function getIvory_GoogleMap_Helper_Map_EventDispatcherService()
+    {
+        $this->services['ivory.google_map.helper.map.event_dispatcher'] = $instance = new \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher($this);
+
+        $instance->addListener('map.javascript.base', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.base']) ? $this->services['ivory.google_map.helper.subscriber.base'] : $this->get('ivory.google_map.helper.subscriber.base')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript.base.bound', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.base.bound']) ? $this->services['ivory.google_map.helper.subscriber.base.bound'] : $this->get('ivory.google_map.helper.subscriber.base.bound')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.base.coordinate', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.base.coordinate']) ? $this->services['ivory.google_map.helper.subscriber.base.coordinate'] : $this->get('ivory.google_map.helper.subscriber.base.coordinate')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.base.point', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.base.point']) ? $this->services['ivory.google_map.helper.subscriber.base.point'] : $this->get('ivory.google_map.helper.subscriber.base.point')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.base.size', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.base.size']) ? $this->services['ivory.google_map.helper.subscriber.base.size'] : $this->get('ivory.google_map.helper.subscriber.base.size')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.control', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.control']) ? $this->services['ivory.google_map.helper.subscriber.control'] : $this->get('ivory.google_map.helper.subscriber.control')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript.control.custom', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.control.custom']) ? $this->services['ivory.google_map.helper.subscriber.control.custom'] : $this->get('ivory.google_map.helper.subscriber.control.custom')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.event']) ? $this->services['ivory.google_map.helper.subscriber.event'] : $this->get('ivory.google_map.helper.subscriber.event')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript.event.dom_event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.event.dom_event']) ? $this->services['ivory.google_map.helper.subscriber.event.dom_event'] : $this->get('ivory.google_map.helper.subscriber.event.dom_event')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.event.dom_event_once', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.event.dom_event_once']) ? $this->services['ivory.google_map.helper.subscriber.event.dom_event_once'] : $this->get('ivory.google_map.helper.subscriber.event.dom_event_once')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.event.event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.event.event']) ? $this->services['ivory.google_map.helper.subscriber.event.event'] : $this->get('ivory.google_map.helper.subscriber.event.event')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.event.event_once', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.event.event_once']) ? $this->services['ivory.google_map.helper.subscriber.event.event_once'] : $this->get('ivory.google_map.helper.subscriber.event.event_once')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.layer', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer']) ? $this->services['ivory.google_map.helper.subscriber.layer'] : $this->get('ivory.google_map.helper.subscriber.layer')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript.layer.geo_json_layer', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.geo_json']) ? $this->services['ivory.google_map.helper.subscriber.layer.geo_json'] : $this->get('ivory.google_map.helper.subscriber.layer.geo_json')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.heatmap']) ? $this->services['ivory.google_map.helper.subscriber.layer.heatmap'] : $this->get('ivory.google_map.helper.subscriber.layer.heatmap')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.layer.heatmap_layer', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.heatmap']) ? $this->services['ivory.google_map.helper.subscriber.layer.heatmap'] : $this->get('ivory.google_map.helper.subscriber.layer.heatmap')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.layer.kml_layer', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.layer.kml']) ? $this->services['ivory.google_map.helper.subscriber.layer.kml'] : $this->get('ivory.google_map.helper.subscriber.layer.kml')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map']) ? $this->services['ivory.google_map.helper.subscriber.map'] : $this->get('ivory.google_map.helper.subscriber.map')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.finish', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_bound']) ? $this->services['ivory.google_map.helper.subscriber.map_bound'] : $this->get('ivory.google_map.helper.subscriber.map_bound')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.finish', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_center']) ? $this->services['ivory.google_map.helper.subscriber.map_center'] : $this->get('ivory.google_map.helper.subscriber.map_center')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.init.container', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_container']) ? $this->services['ivory.google_map.helper.subscriber.map_container'] : $this->get('ivory.google_map.helper.subscriber.map_container')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.html', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_html']) ? $this->services['ivory.google_map.helper.subscriber.map_html'] : $this->get('ivory.google_map.helper.subscriber.map_html')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.init', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_init']) ? $this->services['ivory.google_map.helper.subscriber.map_init'] : $this->get('ivory.google_map.helper.subscriber.map_init')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_javascript']) ? $this->services['ivory.google_map.helper.subscriber.map_javascript'] : $this->get('ivory.google_map.helper.subscriber.map_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_javascript']) ? $this->services['ivory.google_map.helper.subscriber.map_javascript'] : $this->get('ivory.google_map.helper.subscriber.map_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.stylesheet', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.map_stylehseet']) ? $this->services['ivory.google_map.helper.subscriber.map_stylehseet'] : $this->get('ivory.google_map.helper.subscriber.map_stylehseet')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay']) ? $this->services['ivory.google_map.helper.subscriber.overlay'] : $this->get('ivory.google_map.helper.subscriber.overlay')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.javascript.overlay.circle', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.circle']) ? $this->services['ivory.google_map.helper.subscriber.overlay.circle'] : $this->get('ivory.google_map.helper.subscriber.overlay.circle')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.subscriber.overlay.encoded_polyline')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.encoded_polyline', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.subscriber.overlay.encoded_polyline')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.finish', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.extendable']) ? $this->services['ivory.google_map.helper.subscriber.overlay.extendable'] : $this->get('ivory.google_map.helper.subscriber.overlay.extendable')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.ground_overlay', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.ground_overlay']) ? $this->services['ivory.google_map.helper.subscriber.overlay.ground_overlay'] : $this->get('ivory.google_map.helper.subscriber.overlay.ground_overlay')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.icon', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.icon']) ? $this->services['ivory.google_map.helper.subscriber.overlay.icon'] : $this->get('ivory.google_map.helper.subscriber.overlay.icon')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.icon_sequence', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.icon_sequence']) ? $this->services['ivory.google_map.helper.subscriber.overlay.icon_sequence'] : $this->get('ivory.google_map.helper.subscriber.overlay.icon_sequence')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_box']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_box'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_box')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.info_window', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_box']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_box'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_box')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.init.function', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_window.close']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_window.close'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_window.close')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.finish', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_window.open']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_window.open'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_window.open')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.info_window', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.info_window.default']) ? $this->services['ivory.google_map.helper.subscriber.overlay.info_window.default'] : $this->get('ivory.google_map.helper.subscriber.overlay.info_window.default')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.marker', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('api.javascript.map', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker_clusterer')) && false ?: '_'};
+        }, 1 => 'handleApi'), 0);
+        $instance->addListener('map.javascript.overlay.marker_cluster', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker_clusterer')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.marker_shape', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker_shape']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker_shape'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker_shape')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.marker.info_window.open']) ? $this->services['ivory.google_map.helper.subscriber.overlay.marker.info_window.open'] : $this->get('ivory.google_map.helper.subscriber.overlay.marker.info_window.open')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.polygon', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.polygon']) ? $this->services['ivory.google_map.helper.subscriber.overlay.polygon'] : $this->get('ivory.google_map.helper.subscriber.overlay.polygon')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.polyline', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.polyline']) ? $this->services['ivory.google_map.helper.subscriber.overlay.polyline'] : $this->get('ivory.google_map.helper.subscriber.overlay.polyline')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.rectangle', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.rectangle']) ? $this->services['ivory.google_map.helper.subscriber.overlay.rectangle'] : $this->get('ivory.google_map.helper.subscriber.overlay.rectangle')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.overlay.symbol', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.overlay.symbol']) ? $this->services['ivory.google_map.helper.subscriber.overlay.symbol'] : $this->get('ivory.google_map.helper.subscriber.overlay.symbol')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.javascript.init.function', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.utility.object_to_array']) ? $this->services['ivory.google_map.helper.subscriber.utility.object_to_array'] : $this->get('ivory.google_map.helper.subscriber.utility.object_to_array')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.map.static' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\StaticMapHelper
+     */
+    protected function getIvory_GoogleMap_Helper_Map_StaticService()
+    {
+        return $this->services['ivory.google_map.helper.map.static'] = new \Ivory\GoogleMap\Helper\StaticMapHelper(${($_ = isset($this->services['ivory.google_map.helper.map.static.event_dispatcher']) ? $this->services['ivory.google_map.helper.map.static.event_dispatcher'] : $this->get('ivory.google_map.helper.map.static.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.map.static.event_dispatcher' shared service.
+     *
+     * @return \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+     */
+    protected function getIvory_GoogleMap_Helper_Map_Static_EventDispatcherService()
+    {
+        $this->services['ivory.google_map.helper.map.static.event_dispatcher'] = $instance = new \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher($this);
+
+        $instance->addListener('map.static', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static']) ? $this->services['ivory.google_map.helper.subscriber.static'] : $this->get('ivory.google_map.helper.subscriber.static')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('map.static.center', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.center']) ? $this->services['ivory.google_map.helper.subscriber.static.center'] : $this->get('ivory.google_map.helper.subscriber.static.center')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.encoded_polyline', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.encoded_polyline']) ? $this->services['ivory.google_map.helper.subscriber.static.encoded_polyline'] : $this->get('ivory.google_map.helper.subscriber.static.encoded_polyline')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.extendable', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.extendable']) ? $this->services['ivory.google_map.helper.subscriber.static.extendable'] : $this->get('ivory.google_map.helper.subscriber.static.extendable')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.format', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.format']) ? $this->services['ivory.google_map.helper.subscriber.static.format'] : $this->get('ivory.google_map.helper.subscriber.static.format')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.key', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.key']) ? $this->services['ivory.google_map.helper.subscriber.static.key'] : $this->get('ivory.google_map.helper.subscriber.static.key')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.marker', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.marker']) ? $this->services['ivory.google_map.helper.subscriber.static.marker'] : $this->get('ivory.google_map.helper.subscriber.static.marker')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.polyline', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.polyline']) ? $this->services['ivory.google_map.helper.subscriber.static.polyline'] : $this->get('ivory.google_map.helper.subscriber.static.polyline')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.scale', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.scale']) ? $this->services['ivory.google_map.helper.subscriber.static.scale'] : $this->get('ivory.google_map.helper.subscriber.static.scale')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.size', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.size']) ? $this->services['ivory.google_map.helper.subscriber.static.size'] : $this->get('ivory.google_map.helper.subscriber.static.size')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.type', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.type']) ? $this->services['ivory.google_map.helper.subscriber.static.type'] : $this->get('ivory.google_map.helper.subscriber.static.type')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+        $instance->addListener('map.static.zoom', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.static.zoom']) ? $this->services['ivory.google_map.helper.subscriber.static.zoom'] : $this->get('ivory.google_map.helper.subscriber.static.zoom')) && false ?: '_'};
+        }, 1 => 'handleMap'), 0);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.place_autocomplete' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\PlaceAutocompleteHelper
+     */
+    protected function getIvory_GoogleMap_Helper_PlaceAutocompleteService()
+    {
+        return $this->services['ivory.google_map.helper.place_autocomplete'] = new \Ivory\GoogleMap\Helper\PlaceAutocompleteHelper(${($_ = isset($this->services['ivory.google_map.helper.place_autocomplete.event_dispatcher']) ? $this->services['ivory.google_map.helper.place_autocomplete.event_dispatcher'] : $this->get('ivory.google_map.helper.place_autocomplete.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.place_autocomplete.event_dispatcher' shared service.
+     *
+     * @return \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+     */
+    protected function getIvory_GoogleMap_Helper_PlaceAutocomplete_EventDispatcherService()
+    {
+        $this->services['ivory.google_map.helper.place_autocomplete.event_dispatcher'] = $instance = new \Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher($this);
+
+        $instance->addListener('place_autocomplete.javascript.autocomplete', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.init.container', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_container']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_container'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_container')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.renderHtml', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_html']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_html'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_html')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.init', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_init']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_init'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_init')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('api.javascript.autocomplete', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('place_autocomplete.javascript', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete_javascript')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('place_autocomplete.javascript.base', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.base']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.base')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('place_autocomplete.javascript.base.bound', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.bound']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.bound'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.base.bound')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.base.coordinate', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.event']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.event')) && false ?: '_'};
+        }, 1 => 'handle'), 0);
+        $instance->addListener('place_autocomplete.javascript.event.dom_event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.event.dom_event_once', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.event.event', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.event.event')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+        $instance->addListener('place_autocomplete.javascript.event.event_once', array(0 => function () {
+            return ${($_ = isset($this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event_once']) ? $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event_once'] : $this->get('ivory.google_map.helper.subscriber.place.autocomplete.event.event_once')) && false ?: '_'};
+        }, 1 => 'handleAutocomplete'), 0);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.api' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\ApiRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_ApiService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.api'] = new \Ivory\GoogleMap\Helper\Renderer\ApiRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.api_init']) ? $this->services['ivory.google_map.helper.renderer.api_init'] : $this->get('ivory.google_map.helper.renderer.api_init')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.loader']) ? $this->services['ivory.google_map.helper.renderer.loader'] : $this->get('ivory.google_map.helper.renderer.loader')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.requirement_loader']) ? $this->services['ivory.google_map.helper.renderer.utility.requirement_loader'] : $this->get('ivory.google_map.helper.renderer.utility.requirement_loader')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.source']) ? $this->services['ivory.google_map.helper.renderer.utility.source'] : $this->get('ivory.google_map.helper.renderer.utility.source')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.api_init' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\ApiInitRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_ApiInitService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.api_init'] = new \Ivory\GoogleMap\Helper\Renderer\ApiInitRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.base.bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Base\BoundRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Base_BoundService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.base.bound'] = new \Ivory\GoogleMap\Helper\Renderer\Base\BoundRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Base\CoordinateRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.base.coordinate'] = new \Ivory\GoogleMap\Helper\Renderer\Base\CoordinateRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.base.point' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Base\PointRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Base_PointService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.base.point'] = new \Ivory\GoogleMap\Helper\Renderer\Base\PointRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.base.size' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Base\SizeRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Base_SizeService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.base.size'] = new \Ivory\GoogleMap\Helper\Renderer\Base\SizeRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.custom' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\CustomControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_CustomService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.custom'] = new \Ivory\GoogleMap\Helper\Renderer\Control\CustomControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.fullscreen' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\FullscreenControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_FullscreenService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.fullscreen'] = new \Ivory\GoogleMap\Helper\Renderer\Control\FullscreenControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.manager' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ControlManagerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_ManagerService()
+    {
+        $this->services['ivory.google_map.helper.renderer.control.manager'] = $instance = new \Ivory\GoogleMap\Helper\Renderer\Control\ControlManagerRenderer();
+
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.fullscreen']) ? $this->services['ivory.google_map.helper.renderer.control.fullscreen'] : $this->get('ivory.google_map.helper.renderer.control.fullscreen')) && false ?: '_'});
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.map_type']) ? $this->services['ivory.google_map.helper.renderer.control.map_type'] : $this->get('ivory.google_map.helper.renderer.control.map_type')) && false ?: '_'});
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.rotate']) ? $this->services['ivory.google_map.helper.renderer.control.rotate'] : $this->get('ivory.google_map.helper.renderer.control.rotate')) && false ?: '_'});
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.scale']) ? $this->services['ivory.google_map.helper.renderer.control.scale'] : $this->get('ivory.google_map.helper.renderer.control.scale')) && false ?: '_'});
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.street_view']) ? $this->services['ivory.google_map.helper.renderer.control.street_view'] : $this->get('ivory.google_map.helper.renderer.control.street_view')) && false ?: '_'});
+        $instance->addRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.control.zoom']) ? $this->services['ivory.google_map.helper.renderer.control.zoom'] : $this->get('ivory.google_map.helper.renderer.control.zoom')) && false ?: '_'});
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.map_type' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_MapTypeService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.map_type'] = new \Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_type_id']) ? $this->services['ivory.google_map.helper.renderer.map_type_id'] : $this->get('ivory.google_map.helper.renderer.map_type_id')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.map_type_style']) ? $this->services['ivory.google_map.helper.renderer.control.map_type_style'] : $this->get('ivory.google_map.helper.renderer.control.map_type_style')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.map_type_style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_MapTypeStyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.map_type_style'] = new \Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlStyleRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.position' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ControlPositionRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_PositionService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.position'] = new \Ivory\GoogleMap\Helper\Renderer\Control\ControlPositionRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.rotate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\RotateControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_RotateService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.rotate'] = new \Ivory\GoogleMap\Helper\Renderer\Control\RotateControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.scale' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_ScaleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.scale'] = new \Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.scale_style']) ? $this->services['ivory.google_map.helper.renderer.control.scale_style'] : $this->get('ivory.google_map.helper.renderer.control.scale_style')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.scale_style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_ScaleStyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.scale_style'] = new \Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlStyleRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.street_view' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\StreetViewControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_StreetViewService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.street_view'] = new \Ivory\GoogleMap\Helper\Renderer\Control\StreetViewControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.zoom' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_ZoomService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.zoom'] = new \Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.position']) ? $this->services['ivory.google_map.helper.renderer.control.position'] : $this->get('ivory.google_map.helper.renderer.control.position')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.zoom_style']) ? $this->services['ivory.google_map.helper.renderer.control.zoom_style'] : $this->get('ivory.google_map.helper.renderer.control.zoom_style')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.control.zoom_style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Control_ZoomStyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.control.zoom_style'] = new \Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlStyleRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.event.dom_event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Event\DomEventRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Event_DomEventService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.event.dom_event'] = new \Ivory\GoogleMap\Helper\Renderer\Event\DomEventRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.event.dom_event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Event\DomEventOnceRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Event_DomEventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.event.dom_event_once'] = new \Ivory\GoogleMap\Helper\Renderer\Event\DomEventOnceRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.event.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Event\EventRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Event_EventService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.event.event'] = new \Ivory\GoogleMap\Helper\Renderer\Event\EventRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.event.event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Event\EventOnceRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Event_EventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.event.event_once'] = new \Ivory\GoogleMap\Helper\Renderer\Event\EventOnceRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.geometry.encoding' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Geometry\EncodingRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Geometry_EncodingService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.geometry.encoding'] = new \Ivory\GoogleMap\Helper\Renderer\Geometry\EncodingRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.html.javascript_tag' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Html\JavascriptTagRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Html_JavascriptTagService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.html.javascript_tag'] = new \Ivory\GoogleMap\Helper\Renderer\Html\JavascriptTagRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.tag']) ? $this->services['ivory.google_map.helper.renderer.html.tag'] : $this->get('ivory.google_map.helper.renderer.html.tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.html.stylesheet' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Html\StylesheetRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Html_StylesheetService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.html.stylesheet'] = new \Ivory\GoogleMap\Helper\Renderer\Html\StylesheetRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.html.stylesheet_tag' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Html\StylesheetTagRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Html_StylesheetTagService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.html.stylesheet_tag'] = new \Ivory\GoogleMap\Helper\Renderer\Html\StylesheetTagRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.tag']) ? $this->services['ivory.google_map.helper.renderer.html.tag'] : $this->get('ivory.google_map.helper.renderer.html.tag')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.stylesheet']) ? $this->services['ivory.google_map.helper.renderer.html.stylesheet'] : $this->get('ivory.google_map.helper.renderer.html.stylesheet')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.html.tag' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Html_TagService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.html.tag'] = new \Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.layer.geo_json' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Layer\GeoJsonLayerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Layer_GeoJsonService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.layer.geo_json'] = new \Ivory\GoogleMap\Helper\Renderer\Layer\GeoJsonLayerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.layer.heatmap' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Layer\HeatmapLayerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Layer_HeatmapService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.layer.heatmap'] = new \Ivory\GoogleMap\Helper\Renderer\Layer\HeatmapLayerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.layer.kml' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Layer\KmlLayerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Layer_KmlService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.layer.kml'] = new \Ivory\GoogleMap\Helper\Renderer\Layer\KmlLayerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.loader' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\LoaderRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_LoaderService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.loader'] = new \Ivory\GoogleMap\Helper\Renderer\LoaderRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, 'en');
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map'] = new \Ivory\GoogleMap\Helper\Renderer\MapRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_type_id']) ? $this->services['ivory.google_map.helper.renderer.map_type_id'] : $this->get('ivory.google_map.helper.renderer.map_type_id')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.manager']) ? $this->services['ivory.google_map.helper.renderer.control.manager'] : $this->get('ivory.google_map.helper.renderer.control.manager')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.requirement']) ? $this->services['ivory.google_map.helper.renderer.utility.requirement'] : $this->get('ivory.google_map.helper.renderer.utility.requirement')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map_bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapBoundRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapBoundService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map_bound'] = new \Ivory\GoogleMap\Helper\Renderer\MapBoundRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map_center' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapCenterRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapCenterService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map_center'] = new \Ivory\GoogleMap\Helper\Renderer\MapCenterRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map_container' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapContainerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapContainerService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map_container'] = new \Ivory\GoogleMap\Helper\Renderer\MapContainerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map_html' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapHtmlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapHtmlService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map_html'] = new \Ivory\GoogleMap\Helper\Renderer\MapHtmlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.tag']) ? $this->services['ivory.google_map.helper.renderer.html.tag'] : $this->get('ivory.google_map.helper.renderer.html.tag')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.stylesheet']) ? $this->services['ivory.google_map.helper.renderer.html.stylesheet'] : $this->get('ivory.google_map.helper.renderer.html.stylesheet')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.map_type_id' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_MapTypeIdService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.map_type_id'] = new \Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.animation' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\AnimationRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_AnimationService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.animation'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\AnimationRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.circle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\CircleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_CircleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.circle'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\CircleRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\EncodedPolylineRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\EncodedPolylineRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.geometry.encoding']) ? $this->services['ivory.google_map.helper.renderer.geometry.encoding'] : $this->get('ivory.google_map.helper.renderer.geometry.encoding')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_ExtendableService()
+    {
+        $a = ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable.path']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable.path'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable.path')) && false ?: '_'};
+        $b = ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable.position']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable.position'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable.position')) && false ?: '_'};
+        $c = ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable.bounds']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable.bounds'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable.bounds')) && false ?: '_'};
+
+        $this->services['ivory.google_map.helper.renderer.overlay.extendable'] = $instance = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRenderer();
+
+        $instance->setRenderer('Ivory\\GoogleMap\\Layer\\KmlLayer', ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable.default_viewport']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable.default_viewport'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable.default_viewport')) && false ?: '_'});
+        $instance->setRenderer('Ivory\\GoogleMap\\Layer\\HeatmapLayer', ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer')) && false ?: '_'});
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\EncodedPolyline', $a);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\Polyline', $a);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\Polygon', $a);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\InfoWindow', $b);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\Marker', $b);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\Circle', $c);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\GroundOverlay', $c);
+        $instance->setRenderer('Ivory\\GoogleMap\\Overlay\\Rectangle', $c);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable.bounds' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\BoundsExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_BoundsService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.extendable.bounds'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\BoundsExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable.default_viewport' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\DefaultViewportExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_DefaultViewportService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.extendable.default_viewport'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\DefaultViewportExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\HeatmapLayerExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_HeatmapLayerService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.extendable.heatmap_layer'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\HeatmapLayerExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable.path' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\PathExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_PathService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.extendable.path'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\PathExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.extendable.position' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\PositionExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_Extendable_PositionService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.extendable.position'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\PositionExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.ground_overlay' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\GroundOverlayRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_GroundOverlayService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.ground_overlay'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\GroundOverlayRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.icon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\IconRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_IconService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.icon'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\IconRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.icon_sequence' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\IconSequenceRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_IconSequenceService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.icon_sequence'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\IconSequenceRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.info_box' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoBoxRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_InfoBoxService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.info_box'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoBoxRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.requirement']) ? $this->services['ivory.google_map.helper.renderer.utility.requirement'] : $this->get('ivory.google_map.helper.renderer.utility.requirement')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.info_window.close' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowCloseRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_CloseService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.info_window.close'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowCloseRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.info_window.default' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\DefaultInfoWindowRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_DefaultService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.info_window.default'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\DefaultInfoWindowRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.info_window.open' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowOpenRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_InfoWindow_OpenService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.info_window.open'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowOpenRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.marker'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.animation']) ? $this->services['ivory.google_map.helper.renderer.overlay.animation'] : $this->get('ivory.google_map.helper.renderer.overlay.animation')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.marker_clusterer' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerClustererRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerClustererService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.marker_clusterer'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerClustererRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.requirement']) ? $this->services['ivory.google_map.helper.renderer.utility.requirement'] : $this->get('ivory.google_map.helper.renderer.utility.requirement')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.marker_shape' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerShapeRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_MarkerShapeService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.marker_shape'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerShapeRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.polygon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\PolygonRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_PolygonService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.polygon'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\PolygonRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\PolylineRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.polyline'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\PolylineRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.rectangle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\RectangleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_RectangleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.rectangle'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\RectangleRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.symbol' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_SymbolService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.symbol'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.symbol_path']) ? $this->services['ivory.google_map.helper.renderer.overlay.symbol_path'] : $this->get('ivory.google_map.helper.renderer.overlay.symbol_path')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.overlay.symbol_path' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolPathRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Overlay_SymbolPathService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.overlay.symbol_path'] = new \Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolPathRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.place.autocomplete' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.place.autocomplete'] = new \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.requirement']) ? $this->services['ivory.google_map.helper.renderer.utility.requirement'] : $this->get('ivory.google_map.helper.renderer.utility.requirement')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.place.autocomplete_container' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteContainerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteContainerService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.place.autocomplete_container'] = new \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteContainerRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.json_builder']) ? $this->services['ivory.google_map.helper.json_builder'] : $this->get('ivory.google_map.helper.json_builder')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.tag']) ? $this->services['ivory.google_map.helper.renderer.html.tag'] : $this->get('ivory.google_map.helper.renderer.html.tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.place.autocomplete_html' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteHtmlRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Place_AutocompleteHtmlService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.place.autocomplete_html'] = new \Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteHtmlRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.tag']) ? $this->services['ivory.google_map.helper.renderer.html.tag'] : $this->get('ivory.google_map.helper.renderer.html.tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.base.coordinate'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.base.point' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Base\PointRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Base_PointService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.base.point'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Base\PointRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style'] : $this->get('ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value'] : $this->get('ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolyline_StyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.style'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineStyleRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineValueRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_EncodedPolyline_ValueService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline.value'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineValueRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\ExtendableRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_ExtendableService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.extendable'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\ExtendableRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.static.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.static.base.coordinate')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.marker.location']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.marker.location'] : $this->get('ivory.google_map.helper.renderer.static.overlay.marker.location')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.polyline.location']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.polyline.location'] : $this->get('ivory.google_map.helper.renderer.static.overlay.polyline.location')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.marker'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.marker.style']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.marker.style'] : $this->get('ivory.google_map.helper.renderer.static.overlay.marker.style')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.marker.location']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.marker.location'] : $this->get('ivory.google_map.helper.renderer.static.overlay.marker.location')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.marker.location' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerLocationRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Marker_LocationService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.marker.location'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerLocationRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.static.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.static.base.coordinate')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.marker.style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Marker_StyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.marker.style'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerStyleRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.base.point']) ? $this->services['ivory.google_map.helper.renderer.static.base.point'] : $this->get('ivory.google_map.helper.renderer.static.base.point')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.polyline'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.polyline.style']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.polyline.style'] : $this->get('ivory.google_map.helper.renderer.static.overlay.polyline.style')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.polyline.location']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.polyline.location'] : $this->get('ivory.google_map.helper.renderer.static.overlay.polyline.location')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.polyline.location' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineLocationRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Polyline_LocationService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.polyline.location'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineLocationRenderer(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.static.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.static.base.coordinate')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.overlay.polyline.style' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineStyleRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_Overlay_Polyline_StyleService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.overlay.polyline.style'] = new \Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineStyleRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.static.size' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Image\SizeRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Static_SizeService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.static.size'] = new \Ivory\GoogleMap\Helper\Renderer\Image\SizeRenderer();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.utility.callback' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Utility\CallbackRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Utility_CallbackService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.utility.callback'] = new \Ivory\GoogleMap\Helper\Renderer\Utility\CallbackRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.utility.object_to_array' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Utility\ObjectToArrayRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Utility_ObjectToArrayService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.utility.object_to_array'] = new \Ivory\GoogleMap\Helper\Renderer\Utility\ObjectToArrayRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.utility.requirement' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Utility_RequirementService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.utility.requirement'] = new \Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.utility.requirement_loader' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Utility_RequirementLoaderService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.utility.requirement_loader'] = new \Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.renderer.utility.source' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer
+     */
+    protected function getIvory_GoogleMap_Helper_Renderer_Utility_SourceService()
+    {
+        return $this->services['ivory.google_map.helper.renderer.utility.source'] = new \Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.api_javascript' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\ApiJavascriptSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_ApiJavascriptService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.api_javascript'] = new \Ivory\GoogleMap\Helper\Subscriber\ApiJavascriptSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.api']) ? $this->services['ivory.google_map.helper.renderer.api'] : $this->get('ivory.google_map.helper.renderer.api')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.javascript_tag']) ? $this->services['ivory.google_map.helper.renderer.html.javascript_tag'] : $this->get('ivory.google_map.helper.renderer.html.javascript_tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.base' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Base\BaseSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_BaseService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.base'] = new \Ivory\GoogleMap\Helper\Subscriber\Base\BaseSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.base.bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Base\BoundSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Base_BoundService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.base.bound'] = new \Ivory\GoogleMap\Helper\Subscriber\Base\BoundSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.base.bound']) ? $this->services['ivory.google_map.helper.collector.base.bound'] : $this->get('ivory.google_map.helper.collector.base.bound')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.bound']) ? $this->services['ivory.google_map.helper.renderer.base.bound'] : $this->get('ivory.google_map.helper.renderer.base.bound')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Base\CoordinateSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.base.coordinate'] = new \Ivory\GoogleMap\Helper\Subscriber\Base\CoordinateSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.base.coordinate']) ? $this->services['ivory.google_map.helper.collector.base.coordinate'] : $this->get('ivory.google_map.helper.collector.base.coordinate')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.base.coordinate')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.base.point' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Base\PointSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Base_PointService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.base.point'] = new \Ivory\GoogleMap\Helper\Subscriber\Base\PointSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.base.point']) ? $this->services['ivory.google_map.helper.collector.base.point'] : $this->get('ivory.google_map.helper.collector.base.point')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.point']) ? $this->services['ivory.google_map.helper.renderer.base.point'] : $this->get('ivory.google_map.helper.renderer.base.point')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.base.size' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Base\SizeSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Base_SizeService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.base.size'] = new \Ivory\GoogleMap\Helper\Subscriber\Base\SizeSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.base.size']) ? $this->services['ivory.google_map.helper.collector.base.size'] : $this->get('ivory.google_map.helper.collector.base.size')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.size']) ? $this->services['ivory.google_map.helper.renderer.base.size'] : $this->get('ivory.google_map.helper.renderer.base.size')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.control' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Control\ControlSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_ControlService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.control'] = new \Ivory\GoogleMap\Helper\Subscriber\Control\ControlSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.control.custom' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Control\CustomControlSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Control_CustomService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.control.custom'] = new \Ivory\GoogleMap\Helper\Subscriber\Control\CustomControlSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.control.custom']) ? $this->services['ivory.google_map.helper.collector.control.custom'] : $this->get('ivory.google_map.helper.collector.control.custom')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.control.custom']) ? $this->services['ivory.google_map.helper.renderer.control.custom'] : $this->get('ivory.google_map.helper.renderer.control.custom')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Event\EventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_EventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.event'] = new \Ivory\GoogleMap\Helper\Subscriber\Event\EventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.event.dom_event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Event\DomEventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Event_DomEventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.event.dom_event'] = new \Ivory\GoogleMap\Helper\Subscriber\Event\DomEventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.event.dom_event']) ? $this->services['ivory.google_map.helper.collector.event.dom_event'] : $this->get('ivory.google_map.helper.collector.event.dom_event')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.dom_event']) ? $this->services['ivory.google_map.helper.renderer.event.dom_event'] : $this->get('ivory.google_map.helper.renderer.event.dom_event')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.event.dom_event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Event\DomEventOnceSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Event_DomEventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.event.dom_event_once'] = new \Ivory\GoogleMap\Helper\Subscriber\Event\DomEventOnceSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.event.dom_event_once']) ? $this->services['ivory.google_map.helper.collector.event.dom_event_once'] : $this->get('ivory.google_map.helper.collector.event.dom_event_once')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.dom_event_once']) ? $this->services['ivory.google_map.helper.renderer.event.dom_event_once'] : $this->get('ivory.google_map.helper.renderer.event.dom_event_once')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.event.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Event\SimpleEventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Event_EventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.event.event'] = new \Ivory\GoogleMap\Helper\Subscriber\Event\SimpleEventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.event.event']) ? $this->services['ivory.google_map.helper.collector.event.event'] : $this->get('ivory.google_map.helper.collector.event.event')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.event']) ? $this->services['ivory.google_map.helper.renderer.event.event'] : $this->get('ivory.google_map.helper.renderer.event.event')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.event.event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Event\EventOnceSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Event_EventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.event.event_once'] = new \Ivory\GoogleMap\Helper\Subscriber\Event\EventOnceSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.event.event_once']) ? $this->services['ivory.google_map.helper.collector.event.event_once'] : $this->get('ivory.google_map.helper.collector.event.event_once')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.event_once']) ? $this->services['ivory.google_map.helper.renderer.event.event_once'] : $this->get('ivory.google_map.helper.renderer.event.event_once')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.layer' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Layer\LayerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_LayerService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.layer'] = new \Ivory\GoogleMap\Helper\Subscriber\Layer\LayerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.layer.geo_json' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Layer\GeoJsonLayerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Layer_GeoJsonService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.layer.geo_json'] = new \Ivory\GoogleMap\Helper\Subscriber\Layer\GeoJsonLayerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.layer.geo_json']) ? $this->services['ivory.google_map.helper.collector.layer.geo_json'] : $this->get('ivory.google_map.helper.collector.layer.geo_json')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.layer.geo_json']) ? $this->services['ivory.google_map.helper.renderer.layer.geo_json'] : $this->get('ivory.google_map.helper.renderer.layer.geo_json')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.layer.heatmap' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Layer\HeatmapLayerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Layer_HeatmapService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.layer.heatmap'] = new \Ivory\GoogleMap\Helper\Subscriber\Layer\HeatmapLayerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.layer.heatmap']) ? $this->services['ivory.google_map.helper.collector.layer.heatmap'] : $this->get('ivory.google_map.helper.collector.layer.heatmap')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.layer.heatmap']) ? $this->services['ivory.google_map.helper.renderer.layer.heatmap'] : $this->get('ivory.google_map.helper.renderer.layer.heatmap')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.layer.kml' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Layer\KmlLayerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Layer_KmlService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.layer.kml'] = new \Ivory\GoogleMap\Helper\Subscriber\Layer\KmlLayerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.layer.kml']) ? $this->services['ivory.google_map.helper.collector.layer.kml'] : $this->get('ivory.google_map.helper.collector.layer.kml')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.layer.kml']) ? $this->services['ivory.google_map.helper.renderer.layer.kml'] : $this->get('ivory.google_map.helper.renderer.layer.kml')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map'] = new \Ivory\GoogleMap\Helper\Subscriber\MapSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map']) ? $this->services['ivory.google_map.helper.renderer.map'] : $this->get('ivory.google_map.helper.renderer.map')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapBoundSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapBoundService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_bound'] = new \Ivory\GoogleMap\Helper\Subscriber\MapBoundSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_bound']) ? $this->services['ivory.google_map.helper.renderer.map_bound'] : $this->get('ivory.google_map.helper.renderer.map_bound')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_center' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapCenterSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapCenterService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_center'] = new \Ivory\GoogleMap\Helper\Subscriber\MapCenterSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_center']) ? $this->services['ivory.google_map.helper.renderer.map_center'] : $this->get('ivory.google_map.helper.renderer.map_center')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_container' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapContainerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapContainerService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_container'] = new \Ivory\GoogleMap\Helper\Subscriber\MapContainerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_container']) ? $this->services['ivory.google_map.helper.renderer.map_container'] : $this->get('ivory.google_map.helper.renderer.map_container')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_html' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapHtmlSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapHtmlService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_html'] = new \Ivory\GoogleMap\Helper\Subscriber\MapHtmlSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map_html']) ? $this->services['ivory.google_map.helper.renderer.map_html'] : $this->get('ivory.google_map.helper.renderer.map_html')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_init' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapInitSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapInitService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_init'] = new \Ivory\GoogleMap\Helper\Subscriber\MapInitSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_javascript' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapJavascriptSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapJavascriptService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_javascript'] = new \Ivory\GoogleMap\Helper\Subscriber\MapJavascriptSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.map']) ? $this->services['ivory.google_map.helper.renderer.map'] : $this->get('ivory.google_map.helper.renderer.map')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.callback']) ? $this->services['ivory.google_map.helper.renderer.utility.callback'] : $this->get('ivory.google_map.helper.renderer.utility.callback')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.javascript_tag']) ? $this->services['ivory.google_map.helper.renderer.html.javascript_tag'] : $this->get('ivory.google_map.helper.renderer.html.javascript_tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.map_stylehseet' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\MapStylesheetSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_MapStylehseetService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.map_stylehseet'] = new \Ivory\GoogleMap\Helper\Subscriber\MapStylesheetSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.stylesheet_tag']) ? $this->services['ivory.google_map.helper.renderer.html.stylesheet_tag'] : $this->get('ivory.google_map.helper.renderer.html.stylesheet_tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\OverlaySubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_OverlayService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\OverlaySubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.circle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\CircleSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_CircleService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.circle'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\CircleSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.circle']) ? $this->services['ivory.google_map.helper.collector.overlay.circle'] : $this->get('ivory.google_map.helper.collector.overlay.circle')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.circle']) ? $this->services['ivory.google_map.helper.renderer.overlay.circle'] : $this->get('ivory.google_map.helper.renderer.overlay.circle')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\EncodedPolylineSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\EncodedPolylineSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.collector.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.collector.overlay.encoded_polyline')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.renderer.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.renderer.overlay.encoded_polyline')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\ExtendableSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_ExtendableService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.extendable'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\ExtendableSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.extendable']) ? $this->services['ivory.google_map.helper.collector.overlay.extendable'] : $this->get('ivory.google_map.helper.collector.overlay.extendable')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.extendable']) ? $this->services['ivory.google_map.helper.renderer.overlay.extendable'] : $this->get('ivory.google_map.helper.renderer.overlay.extendable')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.ground_overlay' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\GroundOverlaySubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_GroundOverlayService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.ground_overlay'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\GroundOverlaySubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.ground_overlay']) ? $this->services['ivory.google_map.helper.collector.overlay.ground_overlay'] : $this->get('ivory.google_map.helper.collector.overlay.ground_overlay')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.ground_overlay']) ? $this->services['ivory.google_map.helper.renderer.overlay.ground_overlay'] : $this->get('ivory.google_map.helper.renderer.overlay.ground_overlay')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.icon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\IconSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_IconService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.icon'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\IconSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.icon']) ? $this->services['ivory.google_map.helper.collector.overlay.icon'] : $this->get('ivory.google_map.helper.collector.overlay.icon')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.icon']) ? $this->services['ivory.google_map.helper.renderer.overlay.icon'] : $this->get('ivory.google_map.helper.renderer.overlay.icon')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.icon_sequence' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\IconSequenceSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_IconSequenceService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.icon_sequence'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\IconSequenceSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.icon_sequence']) ? $this->services['ivory.google_map.helper.collector.overlay.icon_sequence'] : $this->get('ivory.google_map.helper.collector.overlay.icon_sequence')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.icon_sequence']) ? $this->services['ivory.google_map.helper.renderer.overlay.icon_sequence'] : $this->get('ivory.google_map.helper.renderer.overlay.icon_sequence')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.info_box' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoBoxSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoBoxService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.info_box'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoBoxSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_box']) ? $this->services['ivory.google_map.helper.collector.overlay.info_box'] : $this->get('ivory.google_map.helper.collector.overlay.info_box')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.info_box']) ? $this->services['ivory.google_map.helper.renderer.overlay.info_box'] : $this->get('ivory.google_map.helper.renderer.overlay.info_box')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.info_window.close' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoWindowCloseSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_CloseService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.info_window.close'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoWindowCloseSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_window']) ? $this->services['ivory.google_map.helper.collector.overlay.info_window'] : $this->get('ivory.google_map.helper.collector.overlay.info_window')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.info_window.close']) ? $this->services['ivory.google_map.helper.renderer.overlay.info_window.close'] : $this->get('ivory.google_map.helper.renderer.overlay.info_window.close')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.info_window.default' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\DefaultInfoWindowSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_DefaultService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.info_window.default'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\DefaultInfoWindowSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_window.default']) ? $this->services['ivory.google_map.helper.collector.overlay.info_window.default'] : $this->get('ivory.google_map.helper.collector.overlay.info_window.default')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.info_window.default']) ? $this->services['ivory.google_map.helper.renderer.overlay.info_window.default'] : $this->get('ivory.google_map.helper.renderer.overlay.info_window.default')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.info_window.open' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoWindowOpenSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_InfoWindow_OpenService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.info_window.open'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoWindowOpenSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.info_window']) ? $this->services['ivory.google_map.helper.collector.overlay.info_window'] : $this->get('ivory.google_map.helper.collector.overlay.info_window')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.info_window.open']) ? $this->services['ivory.google_map.helper.renderer.overlay.info_window.open'] : $this->get('ivory.google_map.helper.renderer.overlay.info_window.open')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.marker'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.marker']) ? $this->services['ivory.google_map.helper.renderer.overlay.marker'] : $this->get('ivory.google_map.helper.renderer.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.marker.info_window.open' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerInfoWindowOpenSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_Marker_InfoWindow_OpenService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.marker.info_window.open'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerInfoWindowOpenSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker']) ? $this->services['ivory.google_map.helper.collector.overlay.marker'] : $this->get('ivory.google_map.helper.collector.overlay.marker')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.info_window.open']) ? $this->services['ivory.google_map.helper.renderer.overlay.info_window.open'] : $this->get('ivory.google_map.helper.renderer.overlay.info_window.open')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.event']) ? $this->services['ivory.google_map.helper.renderer.event.event'] : $this->get('ivory.google_map.helper.renderer.event.event')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.marker_clusterer' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerClustererSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerClustererService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.marker_clusterer'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerClustererSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.marker_clusterer']) ? $this->services['ivory.google_map.helper.renderer.overlay.marker_clusterer'] : $this->get('ivory.google_map.helper.renderer.overlay.marker_clusterer')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.marker_shape' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerShapeSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_MarkerShapeService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.marker_shape'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerShapeSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.marker_shape']) ? $this->services['ivory.google_map.helper.collector.overlay.marker_shape'] : $this->get('ivory.google_map.helper.collector.overlay.marker_shape')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.marker_shape']) ? $this->services['ivory.google_map.helper.renderer.overlay.marker_shape'] : $this->get('ivory.google_map.helper.renderer.overlay.marker_shape')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.polygon' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\PolygonSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_PolygonService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.polygon'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\PolygonSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.polygon']) ? $this->services['ivory.google_map.helper.collector.overlay.polygon'] : $this->get('ivory.google_map.helper.collector.overlay.polygon')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.polygon']) ? $this->services['ivory.google_map.helper.renderer.overlay.polygon'] : $this->get('ivory.google_map.helper.renderer.overlay.polygon')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\PolylineSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.polyline'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\PolylineSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.polyline']) ? $this->services['ivory.google_map.helper.collector.overlay.polyline'] : $this->get('ivory.google_map.helper.collector.overlay.polyline')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.polyline']) ? $this->services['ivory.google_map.helper.renderer.overlay.polyline'] : $this->get('ivory.google_map.helper.renderer.overlay.polyline')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.rectangle' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\RectangleSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_RectangleService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.rectangle'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\RectangleSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.rectangle']) ? $this->services['ivory.google_map.helper.collector.overlay.rectangle'] : $this->get('ivory.google_map.helper.collector.overlay.rectangle')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.rectangle']) ? $this->services['ivory.google_map.helper.renderer.overlay.rectangle'] : $this->get('ivory.google_map.helper.renderer.overlay.rectangle')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.overlay.symbol' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Overlay\SymbolSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Overlay_SymbolService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.overlay.symbol'] = new \Ivory\GoogleMap\Helper\Subscriber\Overlay\SymbolSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.overlay.symbol']) ? $this->services['ivory.google_map.helper.collector.overlay.symbol'] : $this->get('ivory.google_map.helper.collector.overlay.symbol')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.overlay.symbol']) ? $this->services['ivory.google_map.helper.renderer.overlay.symbol'] : $this->get('ivory.google_map.helper.renderer.overlay.symbol')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.place.autocomplete']) ? $this->services['ivory.google_map.helper.renderer.place.autocomplete'] : $this->get('ivory.google_map.helper.renderer.place.autocomplete')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.base' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteBaseSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_BaseService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteBaseSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.base.bound' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteBoundSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Base_BoundService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.bound'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteBoundSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.base.bound']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.base.bound'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.base.bound')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.bound']) ? $this->services['ivory.google_map.helper.renderer.base.bound'] : $this->get('ivory.google_map.helper.renderer.base.bound')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteCoordinateSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Base_CoordinateService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.base.coordinate'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Base\AutocompleteCoordinateSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.base.coordinate']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.base.coordinate'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.base.coordinate')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.base.coordinate')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_EventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteDomEventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_DomEventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteDomEventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.event.dom_event')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.dom_event']) ? $this->services['ivory.google_map.helper.renderer.event.dom_event'] : $this->get('ivory.google_map.helper.renderer.event.dom_event')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteDomEventOnceSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_DomEventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.dom_event_once'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteDomEventOnceSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.event.dom_event_once')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.dom_event_once']) ? $this->services['ivory.google_map.helper.renderer.event.dom_event_once'] : $this->get('ivory.google_map.helper.renderer.event.dom_event_once')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.event.event' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteSimpleEventSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_EventService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteSimpleEventSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.event.event']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.event.event'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.event.event')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.event']) ? $this->services['ivory.google_map.helper.renderer.event.event'] : $this->get('ivory.google_map.helper.renderer.event.event')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete.event.event_once' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventOnceSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_Autocomplete_Event_EventOnceService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete.event.event_once'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventOnceSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.collector.place.autocomplete.event.event_once']) ? $this->services['ivory.google_map.helper.collector.place.autocomplete.event.event_once'] : $this->get('ivory.google_map.helper.collector.place.autocomplete.event.event_once')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.event.event_once']) ? $this->services['ivory.google_map.helper.renderer.event.event_once'] : $this->get('ivory.google_map.helper.renderer.event.event_once')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete_container' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteContainerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteContainerService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete_container'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteContainerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.place.autocomplete_container']) ? $this->services['ivory.google_map.helper.renderer.place.autocomplete_container'] : $this->get('ivory.google_map.helper.renderer.place.autocomplete_container')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete_html' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteHtmlSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteHtmlService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete_html'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteHtmlSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.place.autocomplete_html']) ? $this->services['ivory.google_map.helper.renderer.place.autocomplete_html'] : $this->get('ivory.google_map.helper.renderer.place.autocomplete_html')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete_init' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteInitSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteInitService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete_init'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteInitSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.place.autocomplete_javascript' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteJavascriptSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Place_AutocompleteJavascriptService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.place.autocomplete_javascript'] = new \Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteJavascriptSubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.place.autocomplete']) ? $this->services['ivory.google_map.helper.renderer.place.autocomplete'] : $this->get('ivory.google_map.helper.renderer.place.autocomplete')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.callback']) ? $this->services['ivory.google_map.helper.renderer.utility.callback'] : $this->get('ivory.google_map.helper.renderer.utility.callback')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.html.javascript_tag']) ? $this->services['ivory.google_map.helper.renderer.html.javascript_tag'] : $this->get('ivory.google_map.helper.renderer.html.javascript_tag')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\StaticSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_StaticService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\StaticSubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.center' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\CenterSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_CenterService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.center'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\CenterSubscriber(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.base.coordinate']) ? $this->services['ivory.google_map.helper.renderer.static.base.coordinate'] : $this->get('ivory.google_map.helper.renderer.static.base.coordinate')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.encoded_polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\EncodedPolylineSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_EncodedPolylineService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.encoded_polyline'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\EncodedPolylineSubscriber(${($_ = isset($this->services['ivory.google_map.helper.collector.static.encoded_polyline']) ? $this->services['ivory.google_map.helper.collector.static.encoded_polyline'] : $this->get('ivory.google_map.helper.collector.static.encoded_polyline')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.encoded_polyline'] : $this->get('ivory.google_map.helper.renderer.static.overlay.encoded_polyline')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.extendable' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\ExtendableSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_ExtendableService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.extendable'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\ExtendableSubscriber(${($_ = isset($this->services['ivory.google_map.helper.collector.static.extendable']) ? $this->services['ivory.google_map.helper.collector.static.extendable'] : $this->get('ivory.google_map.helper.collector.static.extendable')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.extendable']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.extendable'] : $this->get('ivory.google_map.helper.renderer.static.overlay.extendable')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.format' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\FormatSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_FormatService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.format'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\FormatSubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.key' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\KeySubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_KeyService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.key'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\KeySubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.marker' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\MarkerSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_MarkerService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.marker'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\MarkerSubscriber(${($_ = isset($this->services['ivory.google_map.helper.collector.static.marker']) ? $this->services['ivory.google_map.helper.collector.static.marker'] : $this->get('ivory.google_map.helper.collector.static.marker')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.marker']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.marker'] : $this->get('ivory.google_map.helper.renderer.static.overlay.marker')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.polyline' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\PolylineSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_PolylineService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.polyline'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\PolylineSubscriber(${($_ = isset($this->services['ivory.google_map.helper.collector.static.polyline']) ? $this->services['ivory.google_map.helper.collector.static.polyline'] : $this->get('ivory.google_map.helper.collector.static.polyline')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.static.overlay.polyline']) ? $this->services['ivory.google_map.helper.renderer.static.overlay.polyline'] : $this->get('ivory.google_map.helper.renderer.static.overlay.polyline')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.scale' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\ScaleSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_ScaleService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.scale'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\ScaleSubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.size' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\SizeSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_SizeService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.size'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\SizeSubscriber(${($_ = isset($this->services['ivory.google_map.helper.renderer.static.size']) ? $this->services['ivory.google_map.helper.renderer.static.size'] : $this->get('ivory.google_map.helper.renderer.static.size')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.type' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\TypeSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_TypeService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.type'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\TypeSubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.static.zoom' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Image\ZoomSubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Static_ZoomService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.static.zoom'] = new \Ivory\GoogleMap\Helper\Subscriber\Image\ZoomSubscriber();
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.helper.subscriber.utility.object_to_array' shared service.
+     *
+     * @return \Ivory\GoogleMap\Helper\Subscriber\Utility\ObjectToArraySubscriber
+     */
+    protected function getIvory_GoogleMap_Helper_Subscriber_Utility_ObjectToArrayService()
+    {
+        return $this->services['ivory.google_map.helper.subscriber.utility.object_to_array'] = new \Ivory\GoogleMap\Helper\Subscriber\Utility\ObjectToArraySubscriber(${($_ = isset($this->services['ivory.google_map.helper.formatter']) ? $this->services['ivory.google_map.helper.formatter'] : $this->get('ivory.google_map.helper.formatter')) && false ?: '_'}, ${($_ = isset($this->services['ivory.google_map.helper.renderer.utility.object_to_array']) ? $this->services['ivory.google_map.helper.renderer.utility.object_to_array'] : $this->get('ivory.google_map.helper.renderer.utility.object_to_array')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.twig.extension.api' shared service.
+     *
+     * @return \Ivory\GoogleMapBundle\Twig\ApiExtension
+     */
+    protected function getIvory_GoogleMap_Twig_Extension_ApiService()
+    {
+        return $this->services['ivory.google_map.twig.extension.api'] = new \Ivory\GoogleMapBundle\Twig\ApiExtension(${($_ = isset($this->services['ivory.google_map.helper.api']) ? $this->services['ivory.google_map.helper.api'] : $this->get('ivory.google_map.helper.api')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.twig.extension.map' shared service.
+     *
+     * @return \Ivory\GoogleMapBundle\Twig\MapExtension
+     */
+    protected function getIvory_GoogleMap_Twig_Extension_MapService()
+    {
+        return $this->services['ivory.google_map.twig.extension.map'] = new \Ivory\GoogleMapBundle\Twig\MapExtension(${($_ = isset($this->services['ivory.google_map.helper.map']) ? $this->services['ivory.google_map.helper.map'] : $this->get('ivory.google_map.helper.map')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.twig.extension.map.static' shared service.
+     *
+     * @return \Ivory\GoogleMapBundle\Twig\StaticMapExtension
+     */
+    protected function getIvory_GoogleMap_Twig_Extension_Map_StaticService()
+    {
+        return $this->services['ivory.google_map.twig.extension.map.static'] = new \Ivory\GoogleMapBundle\Twig\StaticMapExtension(${($_ = isset($this->services['ivory.google_map.helper.map.static']) ? $this->services['ivory.google_map.helper.map.static'] : $this->get('ivory.google_map.helper.map.static')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.google_map.twig.extension.place_autocomplete' shared service.
+     *
+     * @return \Ivory\GoogleMapBundle\Twig\PlaceAutocompleteExtension
+     */
+    protected function getIvory_GoogleMap_Twig_Extension_PlaceAutocompleteService()
+    {
+        return $this->services['ivory.google_map.twig.extension.place_autocomplete'] = new \Ivory\GoogleMapBundle\Twig\PlaceAutocompleteExtension(${($_ = isset($this->services['ivory.google_map.helper.place_autocomplete']) ? $this->services['ivory.google_map.helper.place_autocomplete'] : $this->get('ivory.google_map.helper.place_autocomplete')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer' shared service.
+     *
+     * @return \Ivory\Serializer\Serializer
+     */
+    protected function getIvory_SerializerService()
+    {
+        return $this->services['ivory.serializer'] = new \Ivory\Serializer\Serializer(${($_ = isset($this->services['ivory.serializer.navigator.event']) ? $this->services['ivory.serializer.navigator.event'] : $this->get('ivory.serializer.navigator.event')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.registry.visitor']) ? $this->services['ivory.serializer.registry.visitor'] : $this->get('ivory.serializer.registry.visitor')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.type.parser']) ? $this->services['ivory.serializer.type.parser'] : $this->get('ivory.serializer.type.parser')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.accessor' shared service.
+     *
+     * @return \Ivory\Serializer\Accessor\ReflectionAccessor
+     */
+    protected function getIvory_Serializer_AccessorService()
+    {
+        return $this->services['ivory.serializer.accessor'] = new \Ivory\Serializer\Accessor\ReflectionAccessor();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.event.dispatcher' shared service.
+     *
+     * @return \Symfony\Component\EventDispatcher\EventDispatcher
+     */
+    protected function getIvory_Serializer_Event_DispatcherService()
+    {
+        return $this->services['ivory.serializer.event.dispatcher'] = new \Symfony\Component\EventDispatcher\EventDispatcher();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.instantiator' shared service.
+     *
+     * @return \Ivory\Serializer\Instantiator\DoctrineInstantiator
+     */
+    protected function getIvory_Serializer_InstantiatorService()
+    {
+        return $this->services['ivory.serializer.instantiator'] = new \Ivory\Serializer\Instantiator\DoctrineInstantiator();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mapping.factory.default' shared service.
+     *
+     * @return \Ivory\Serializer\Mapping\Factory\ClassMetadataFactory
+     */
+    protected function getIvory_Serializer_Mapping_Factory_DefaultService()
+    {
+        return $this->services['ivory.serializer.mapping.factory.default'] = new \Ivory\Serializer\Mapping\Factory\ClassMetadataFactory(${($_ = isset($this->services['ivory.serializer.mapping.loader']) ? $this->services['ivory.serializer.mapping.loader'] : $this->get('ivory.serializer.mapping.loader')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mapping.factory.event' shared service.
+     *
+     * @return \Ivory\Serializer\Mapping\Factory\EventClassMetadataFactory
+     */
+    protected function getIvory_Serializer_Mapping_Factory_EventService()
+    {
+        return $this->services['ivory.serializer.mapping.factory.event'] = new \Ivory\Serializer\Mapping\Factory\EventClassMetadataFactory(${($_ = isset($this->services['ivory.serializer.mapping.factory.default']) ? $this->services['ivory.serializer.mapping.factory.default'] : $this->get('ivory.serializer.mapping.factory.default')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.event.dispatcher']) ? $this->services['ivory.serializer.event.dispatcher'] : $this->get('ivory.serializer.event.dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mapping.loader' shared service.
+     *
+     * @return \Ivory\Serializer\Mapping\Loader\ChainClassMetadataLoader
+     */
+    protected function getIvory_Serializer_Mapping_LoaderService()
+    {
+        return $this->services['ivory.serializer.mapping.loader'] = new \Ivory\Serializer\Mapping\Loader\ChainClassMetadataLoader(array(0 => ${($_ = isset($this->services['ivory.serializer.mapping.loader.reflection']) ? $this->services['ivory.serializer.mapping.loader.reflection'] : $this->get('ivory.serializer.mapping.loader.reflection')) && false ?: '_'}, 1 => ${($_ = isset($this->services['ivory.serializer.mapping.loader.annotation']) ? $this->services['ivory.serializer.mapping.loader.annotation'] : $this->get('ivory.serializer.mapping.loader.annotation')) && false ?: '_'}), ${($_ = isset($this->services['ivory.serializer.type.parser']) ? $this->services['ivory.serializer.type.parser'] : $this->get('ivory.serializer.type.parser')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mapping.loader.annotation' shared service.
+     *
+     * @return \Ivory\Serializer\Mapping\Loader\AnnotationClassMetadataLoader
+     */
+    protected function getIvory_Serializer_Mapping_Loader_AnnotationService()
+    {
+        return $this->services['ivory.serializer.mapping.loader.annotation'] = new \Ivory\Serializer\Mapping\Loader\AnnotationClassMetadataLoader(${($_ = isset($this->services['annotation_reader']) ? $this->services['annotation_reader'] : $this->get('annotation_reader')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.type.parser']) ? $this->services['ivory.serializer.type.parser'] : $this->get('ivory.serializer.type.parser')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mapping.loader.reflection' shared service.
+     *
+     * @return \Ivory\Serializer\Mapping\Loader\ReflectionClassMetadataLoader
+     */
+    protected function getIvory_Serializer_Mapping_Loader_ReflectionService()
+    {
+        return $this->services['ivory.serializer.mapping.loader.reflection'] = new \Ivory\Serializer\Mapping\Loader\ReflectionClassMetadataLoader(NULL, ${($_ = isset($this->services['ivory.serializer.type.parser']) ? $this->services['ivory.serializer.type.parser'] : $this->get('ivory.serializer.type.parser')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.mutator' shared service.
+     *
+     * @return \Ivory\Serializer\Mutator\ReflectionMutator
+     */
+    protected function getIvory_Serializer_MutatorService()
+    {
+        return $this->services['ivory.serializer.mutator'] = new \Ivory\Serializer\Mutator\ReflectionMutator();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.navigator.default' shared service.
+     *
+     * @return \Ivory\Serializer\Navigator\Navigator
+     */
+    protected function getIvory_Serializer_Navigator_DefaultService()
+    {
+        return $this->services['ivory.serializer.navigator.default'] = new \Ivory\Serializer\Navigator\Navigator(${($_ = isset($this->services['ivory.serializer.registry.type']) ? $this->services['ivory.serializer.registry.type'] : $this->get('ivory.serializer.registry.type')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.type.guesser']) ? $this->services['ivory.serializer.type.guesser'] : $this->get('ivory.serializer.type.guesser')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.navigator.event' shared service.
+     *
+     * @return \Ivory\Serializer\Navigator\EventNavigator
+     */
+    protected function getIvory_Serializer_Navigator_EventService()
+    {
+        return $this->services['ivory.serializer.navigator.event'] = new \Ivory\Serializer\Navigator\EventNavigator(${($_ = isset($this->services['ivory.serializer.navigator.default']) ? $this->services['ivory.serializer.navigator.default'] : $this->get('ivory.serializer.navigator.default')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.event.dispatcher']) ? $this->services['ivory.serializer.event.dispatcher'] : $this->get('ivory.serializer.event.dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.registry.type' shared service.
+     *
+     * @return \Ivory\Serializer\Registry\TypeRegistry
+     */
+    protected function getIvory_Serializer_Registry_TypeService()
+    {
+        $a = ${($_ = isset($this->services['ivory.serializer.type.array']) ? $this->services['ivory.serializer.type.array'] : $this->get('ivory.serializer.type.array')) && false ?: '_'};
+        $b = ${($_ = isset($this->services['ivory.serializer.type.boolean']) ? $this->services['ivory.serializer.type.boolean'] : $this->get('ivory.serializer.type.boolean')) && false ?: '_'};
+        $c = ${($_ = isset($this->services['ivory.serializer.type.closure']) ? $this->services['ivory.serializer.type.closure'] : $this->get('ivory.serializer.type.closure')) && false ?: '_'};
+        $d = ${($_ = isset($this->services['ivory.serializer.type.date_time']) ? $this->services['ivory.serializer.type.date_time'] : $this->get('ivory.serializer.type.date_time')) && false ?: '_'};
+        $e = ${($_ = isset($this->services['ivory.serializer.type.exception']) ? $this->services['ivory.serializer.type.exception'] : $this->get('ivory.serializer.type.exception')) && false ?: '_'};
+        $f = ${($_ = isset($this->services['ivory.serializer.type.float']) ? $this->services['ivory.serializer.type.float'] : $this->get('ivory.serializer.type.float')) && false ?: '_'};
+        $g = ${($_ = isset($this->services['ivory.serializer.type.form']) ? $this->services['ivory.serializer.type.form'] : $this->get('ivory.serializer.type.form')) && false ?: '_'};
+        $h = ${($_ = isset($this->services['ivory.serializer.type.form_error']) ? $this->services['ivory.serializer.type.form_error'] : $this->get('ivory.serializer.type.form_error')) && false ?: '_'};
+        $i = ${($_ = isset($this->services['ivory.serializer.type.integer']) ? $this->services['ivory.serializer.type.integer'] : $this->get('ivory.serializer.type.integer')) && false ?: '_'};
+        $j = ${($_ = isset($this->services['ivory.serializer.type.null']) ? $this->services['ivory.serializer.type.null'] : $this->get('ivory.serializer.type.null')) && false ?: '_'};
+        $k = ${($_ = isset($this->services['ivory.serializer.type.object']) ? $this->services['ivory.serializer.type.object'] : $this->get('ivory.serializer.type.object')) && false ?: '_'};
+        $l = ${($_ = isset($this->services['ivory.serializer.type.resource']) ? $this->services['ivory.serializer.type.resource'] : $this->get('ivory.serializer.type.resource')) && false ?: '_'};
+        $m = ${($_ = isset($this->services['ivory.serializer.type.std_class']) ? $this->services['ivory.serializer.type.std_class'] : $this->get('ivory.serializer.type.std_class')) && false ?: '_'};
+        $n = ${($_ = isset($this->services['ivory.serializer.type.string']) ? $this->services['ivory.serializer.type.string'] : $this->get('ivory.serializer.type.string')) && false ?: '_'};
+
+        $this->services['ivory.serializer.registry.type'] = $instance = new \Ivory\Serializer\Registry\TypeRegistry();
+
+        $instance->registerType('array', 1, $a);
+        $instance->registerType('bool', 1, $b);
+        $instance->registerType('boolean', 1, $b);
+        $instance->registerType('closure', 1, $c);
+        $instance->registerType('DateTimeInterface', 1, $d);
+        $instance->registerType('Exception', 1, $e);
+        $instance->registerType('double', 1, $f);
+        $instance->registerType('float', 1, $f);
+        $instance->registerType('numeric', 1, $f);
+        $instance->registerType('Symfony\\Component\\Form\\Form', 1, $g);
+        $instance->registerType('Symfony\\Component\\Form\\FormError', 1, $h);
+        $instance->registerType('int', 1, $i);
+        $instance->registerType('integer', 1, $i);
+        $instance->registerType('null', 1, $j);
+        $instance->registerType('object', 1, $k);
+        $instance->registerType('resource', 1, $l);
+        $instance->registerType('stdClass', 1, $m);
+        $instance->registerType('string', 1, $n);
+        $instance->registerType('array', 2, $a);
+        $instance->registerType('bool', 2, $b);
+        $instance->registerType('boolean', 2, $b);
+        $instance->registerType('closure', 2, $c);
+        $instance->registerType('DateTimeInterface', 2, $d);
+        $instance->registerType('Exception', 2, $e);
+        $instance->registerType('double', 2, $f);
+        $instance->registerType('float', 2, $f);
+        $instance->registerType('numeric', 2, $f);
+        $instance->registerType('Symfony\\Component\\Form\\Form', 2, $g);
+        $instance->registerType('Symfony\\Component\\Form\\FormError', 2, $h);
+        $instance->registerType('int', 2, $i);
+        $instance->registerType('integer', 2, $i);
+        $instance->registerType('null', 2, $j);
+        $instance->registerType('object', 2, $k);
+        $instance->registerType('resource', 2, $l);
+        $instance->registerType('stdClass', 2, $m);
+        $instance->registerType('string', 2, $n);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.registry.visitor' shared service.
+     *
+     * @return \Ivory\Serializer\Registry\VisitorRegistry
+     */
+    protected function getIvory_Serializer_Registry_VisitorService()
+    {
+        $this->services['ivory.serializer.registry.visitor'] = $instance = new \Ivory\Serializer\Registry\VisitorRegistry();
+
+        $instance->registerVisitor(1, 'csv', ${($_ = isset($this->services['ivory.serializer.visitor.csv.serialization']) ? $this->services['ivory.serializer.visitor.csv.serialization'] : $this->get('ivory.serializer.visitor.csv.serialization')) && false ?: '_'});
+        $instance->registerVisitor(2, 'csv', ${($_ = isset($this->services['ivory.serializer.visitor.csv.deserialization']) ? $this->services['ivory.serializer.visitor.csv.deserialization'] : $this->get('ivory.serializer.visitor.csv.deserialization')) && false ?: '_'});
+        $instance->registerVisitor(1, 'json', ${($_ = isset($this->services['ivory.serializer.visitor.json.serialization']) ? $this->services['ivory.serializer.visitor.json.serialization'] : $this->get('ivory.serializer.visitor.json.serialization')) && false ?: '_'});
+        $instance->registerVisitor(2, 'json', ${($_ = isset($this->services['ivory.serializer.visitor.json.deserialization']) ? $this->services['ivory.serializer.visitor.json.deserialization'] : $this->get('ivory.serializer.visitor.json.deserialization')) && false ?: '_'});
+        $instance->registerVisitor(1, 'xml', ${($_ = isset($this->services['ivory.serializer.visitor.xml.serialization']) ? $this->services['ivory.serializer.visitor.xml.serialization'] : $this->get('ivory.serializer.visitor.xml.serialization')) && false ?: '_'});
+        $instance->registerVisitor(2, 'xml', ${($_ = isset($this->services['ivory.serializer.visitor.xml.deserialization']) ? $this->services['ivory.serializer.visitor.xml.deserialization'] : $this->get('ivory.serializer.visitor.xml.deserialization')) && false ?: '_'});
+        $instance->registerVisitor(1, 'yaml', ${($_ = isset($this->services['ivory.serializer.visitor.yaml.serialization']) ? $this->services['ivory.serializer.visitor.yaml.serialization'] : $this->get('ivory.serializer.visitor.yaml.serialization')) && false ?: '_'});
+        $instance->registerVisitor(2, 'yaml', ${($_ = isset($this->services['ivory.serializer.visitor.yaml.deserialization']) ? $this->services['ivory.serializer.visitor.yaml.deserialization'] : $this->get('ivory.serializer.visitor.yaml.deserialization')) && false ?: '_'});
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.array' shared service.
+     *
+     * @return \Ivory\Serializer\Type\ArrayType
+     */
+    protected function getIvory_Serializer_Type_ArrayService()
+    {
+        return $this->services['ivory.serializer.type.array'] = new \Ivory\Serializer\Type\ArrayType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.boolean' shared service.
+     *
+     * @return \Ivory\Serializer\Type\BooleanType
+     */
+    protected function getIvory_Serializer_Type_BooleanService()
+    {
+        return $this->services['ivory.serializer.type.boolean'] = new \Ivory\Serializer\Type\BooleanType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.closure' shared service.
+     *
+     * @return \Ivory\Serializer\Type\ClosureType
+     */
+    protected function getIvory_Serializer_Type_ClosureService()
+    {
+        return $this->services['ivory.serializer.type.closure'] = new \Ivory\Serializer\Type\ClosureType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.date_time' shared service.
+     *
+     * @return \Ivory\Serializer\Type\DateTimeType
+     */
+    protected function getIvory_Serializer_Type_DateTimeService()
+    {
+        return $this->services['ivory.serializer.type.date_time'] = new \Ivory\Serializer\Type\DateTimeType('Y-m-d\\TH:i:sP', 'America/Sao_Paulo');
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.exception' shared service.
+     *
+     * @return \Ivory\Serializer\Type\ExceptionType
+     */
+    protected function getIvory_Serializer_Type_ExceptionService()
+    {
+        return $this->services['ivory.serializer.type.exception'] = new \Ivory\Serializer\Type\ExceptionType(true);
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.float' shared service.
+     *
+     * @return \Ivory\Serializer\Type\FloatType
+     */
+    protected function getIvory_Serializer_Type_FloatService()
+    {
+        return $this->services['ivory.serializer.type.float'] = new \Ivory\Serializer\Type\FloatType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.form' shared service.
+     *
+     * @return \Ivory\SerializerBundle\Type\FormType
+     */
+    protected function getIvory_Serializer_Type_FormService()
+    {
+        return $this->services['ivory.serializer.type.form'] = new \Ivory\SerializerBundle\Type\FormType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.form_error' shared service.
+     *
+     * @return \Ivory\SerializerBundle\Type\FormErrorType
+     */
+    protected function getIvory_Serializer_Type_FormErrorService()
+    {
+        return $this->services['ivory.serializer.type.form_error'] = new \Ivory\SerializerBundle\Type\FormErrorType(${($_ = isset($this->services['translator']) ? $this->services['translator'] : $this->get('translator', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.guesser' shared service.
+     *
+     * @return \Ivory\Serializer\Type\Guesser\TypeGuesser
+     */
+    protected function getIvory_Serializer_Type_GuesserService()
+    {
+        return $this->services['ivory.serializer.type.guesser'] = new \Ivory\Serializer\Type\Guesser\TypeGuesser();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.integer' shared service.
+     *
+     * @return \Ivory\Serializer\Type\IntegerType
+     */
+    protected function getIvory_Serializer_Type_IntegerService()
+    {
+        return $this->services['ivory.serializer.type.integer'] = new \Ivory\Serializer\Type\IntegerType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.lexer' shared service.
+     *
+     * @return \Ivory\Serializer\Type\Parser\TypeLexer
+     */
+    protected function getIvory_Serializer_Type_LexerService()
+    {
+        return $this->services['ivory.serializer.type.lexer'] = new \Ivory\Serializer\Type\Parser\TypeLexer();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.null' shared service.
+     *
+     * @return \Ivory\Serializer\Type\NullType
+     */
+    protected function getIvory_Serializer_Type_NullService()
+    {
+        return $this->services['ivory.serializer.type.null'] = new \Ivory\Serializer\Type\NullType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.object' shared service.
+     *
+     * @return \Ivory\Serializer\Type\ObjectType
+     */
+    protected function getIvory_Serializer_Type_ObjectService()
+    {
+        return $this->services['ivory.serializer.type.object'] = new \Ivory\Serializer\Type\ObjectType(${($_ = isset($this->services['ivory.serializer.mapping.factory.default']) ? $this->services['ivory.serializer.mapping.factory.default'] : $this->get('ivory.serializer.mapping.factory.default')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.parser' shared service.
+     *
+     * @return \Ivory\Serializer\Type\Parser\TypeParser
+     */
+    protected function getIvory_Serializer_Type_ParserService()
+    {
+        return $this->services['ivory.serializer.type.parser'] = new \Ivory\Serializer\Type\Parser\TypeParser(${($_ = isset($this->services['ivory.serializer.type.lexer']) ? $this->services['ivory.serializer.type.lexer'] : $this->get('ivory.serializer.type.lexer')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.resource' shared service.
+     *
+     * @return \Ivory\Serializer\Type\ResourceType
+     */
+    protected function getIvory_Serializer_Type_ResourceService()
+    {
+        return $this->services['ivory.serializer.type.resource'] = new \Ivory\Serializer\Type\ResourceType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.std_class' shared service.
+     *
+     * @return \Ivory\Serializer\Type\StdClassType
+     */
+    protected function getIvory_Serializer_Type_StdClassService()
+    {
+        return $this->services['ivory.serializer.type.std_class'] = new \Ivory\Serializer\Type\StdClassType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.type.string' shared service.
+     *
+     * @return \Ivory\Serializer\Type\StringType
+     */
+    protected function getIvory_Serializer_Type_StringService()
+    {
+        return $this->services['ivory.serializer.type.string'] = new \Ivory\Serializer\Type\StringType();
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.csv.deserialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Csv\CsvDeserializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Csv_DeserializationService()
+    {
+        return $this->services['ivory.serializer.visitor.csv.deserialization'] = new \Ivory\Serializer\Visitor\Csv\CsvDeserializationVisitor(${($_ = isset($this->services['ivory.serializer.instantiator']) ? $this->services['ivory.serializer.instantiator'] : $this->get('ivory.serializer.instantiator')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.mutator']) ? $this->services['ivory.serializer.mutator'] : $this->get('ivory.serializer.mutator')) && false ?: '_'}, ',', '"', '\\', '.');
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.csv.serialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Csv\CsvSerializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Csv_SerializationService()
+    {
+        return $this->services['ivory.serializer.visitor.csv.serialization'] = new \Ivory\Serializer\Visitor\Csv\CsvSerializationVisitor(${($_ = isset($this->services['ivory.serializer.accessor']) ? $this->services['ivory.serializer.accessor'] : $this->get('ivory.serializer.accessor')) && false ?: '_'}, ',', '"', '\\', '.');
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.json.deserialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Json\JsonDeserializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Json_DeserializationService()
+    {
+        return $this->services['ivory.serializer.visitor.json.deserialization'] = new \Ivory\Serializer\Visitor\Json\JsonDeserializationVisitor(${($_ = isset($this->services['ivory.serializer.instantiator']) ? $this->services['ivory.serializer.instantiator'] : $this->get('ivory.serializer.instantiator')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.mutator']) ? $this->services['ivory.serializer.mutator'] : $this->get('ivory.serializer.mutator')) && false ?: '_'}, 512, 0);
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.json.serialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Json\JsonSerializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Json_SerializationService()
+    {
+        return $this->services['ivory.serializer.visitor.json.serialization'] = new \Ivory\Serializer\Visitor\Json\JsonSerializationVisitor(${($_ = isset($this->services['ivory.serializer.accessor']) ? $this->services['ivory.serializer.accessor'] : $this->get('ivory.serializer.accessor')) && false ?: '_'}, 0);
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.xml.deserialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Xml\XmlDeserializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Xml_DeserializationService()
+    {
+        return $this->services['ivory.serializer.visitor.xml.deserialization'] = new \Ivory\Serializer\Visitor\Xml\XmlDeserializationVisitor(${($_ = isset($this->services['ivory.serializer.instantiator']) ? $this->services['ivory.serializer.instantiator'] : $this->get('ivory.serializer.instantiator')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.mutator']) ? $this->services['ivory.serializer.mutator'] : $this->get('ivory.serializer.mutator')) && false ?: '_'}, 'entry', 'key');
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.xml.serialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Xml\XmlSerializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Xml_SerializationService()
+    {
+        return $this->services['ivory.serializer.visitor.xml.serialization'] = new \Ivory\Serializer\Visitor\Xml\XmlSerializationVisitor(${($_ = isset($this->services['ivory.serializer.accessor']) ? $this->services['ivory.serializer.accessor'] : $this->get('ivory.serializer.accessor')) && false ?: '_'}, '1.0', 'UTF-8', true, 'result', 'entry', 'key');
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.yaml.deserialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Yaml\YamlDeserializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Yaml_DeserializationService()
+    {
+        return $this->services['ivory.serializer.visitor.yaml.deserialization'] = new \Ivory\Serializer\Visitor\Yaml\YamlDeserializationVisitor(${($_ = isset($this->services['ivory.serializer.instantiator']) ? $this->services['ivory.serializer.instantiator'] : $this->get('ivory.serializer.instantiator')) && false ?: '_'}, ${($_ = isset($this->services['ivory.serializer.mutator']) ? $this->services['ivory.serializer.mutator'] : $this->get('ivory.serializer.mutator')) && false ?: '_'}, 0);
+    }
+
+    /**
+     * Gets the public 'ivory.serializer.visitor.yaml.serialization' shared service.
+     *
+     * @return \Ivory\Serializer\Visitor\Yaml\YamlSerializationVisitor
+     */
+    protected function getIvory_Serializer_Visitor_Yaml_SerializationService()
+    {
+        return $this->services['ivory.serializer.visitor.yaml.serialization'] = new \Ivory\Serializer\Visitor\Yaml\YamlSerializationVisitor(${($_ = isset($this->services['ivory.serializer.accessor']) ? $this->services['ivory.serializer.accessor'] : $this->get('ivory.serializer.accessor')) && false ?: '_'}, 2, 4, 0);
+    }
+
+    /**
      * Gets the public 'kernel.class_cache.cache_warmer' shared service.
      *
      * @return \Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer
@@ -1898,6 +5060,7 @@ class appDevDebugProjectContainer extends Container
         $instance->add($d);
         $instance->add(new \Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector($this));
         $instance->add(${($_ = isset($this->services['data_collector.dump']) ? $this->services['data_collector.dump'] : $this->get('data_collector.dump')) && false ?: '_'});
+        $instance->add(${($_ = isset($this->services['httplug.collector.collector']) ? $this->services['httplug.collector.collector'] : $this->getHttplug_Collector_CollectorService()) && false ?: '_'});
         $instance->add($e);
 
         return $instance;
@@ -2040,7 +5203,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_EncoderFactoryService()
     {
-        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array());
+        return $this->services['security.encoder_factory'] = new \Symfony\Component\Security\Core\Encoder\EncoderFactory(array('Symfony\\Component\\Security\\Core\\User\\User' => array('class' => 'Symfony\\Component\\Security\\Core\\Encoder\\PlaintextPasswordEncoder', 'arguments' => array(0 => false))));
     }
 
     /**
@@ -2072,13 +5235,30 @@ class appDevDebugProjectContainer extends Container
     {
         $a = ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
         $b = ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'};
-        $c = ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'};
-        $d = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
+        $c = ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+        $d = ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'};
         $e = ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+        $f = ${($_ = isset($this->services['http_kernel']) ? $this->services['http_kernel'] : $this->get('http_kernel')) && false ?: '_'};
+        $g = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
 
-        $f = new \Symfony\Component\Security\Http\AccessMap();
+        $h = new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin');
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($f, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, $c), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '598512f565ca72.08210571', $a, $d), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $f, $d)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $c, new \Symfony\Component\Security\Http\HttpUtils($e, $e), 'main', NULL, NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', NULL, true, false, 'security.user.provider.concrete.in_memory', 'main', NULL, NULL, NULL, array(0 => 'anonymous')));
+        $i = new \Symfony\Component\Security\Http\AccessMap();
+        $i->add($h, array(0 => 'ROLE_ADMIN'), NULL);
+
+        $j = new \Symfony\Component\Security\Http\HttpUtils($e, $e);
+
+        $k = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $j, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($j, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $k->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+
+        $l = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($j, array());
+        $l->setOptions(array('login_path' => 'login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $l->setProviderKey('main');
+
+        $m = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $j, array(), $a);
+        $m->setOptions(array('login_path' => 'login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
+
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($i, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $k, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $j, 'main', $l, $m, array('check_path' => 'login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '59862f812674d4.11464151', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $i, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $j, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $j, 'login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', NULL, true, false, 'security.user.provider.concrete.in_memory', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
     }
 
     /**
@@ -2511,6 +5691,11 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(array(0 => $this, 1 => 'twig.form.renderer')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\WebLinkExtension($c));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
+        $instance->addExtension(${($_ = isset($this->services['ivory.google_map.twig.extension.api']) ? $this->services['ivory.google_map.twig.extension.api'] : $this->get('ivory.google_map.twig.extension.api')) && false ?: '_'});
+        $instance->addExtension(${($_ = isset($this->services['ivory.google_map.twig.extension.map']) ? $this->services['ivory.google_map.twig.extension.map'] : $this->get('ivory.google_map.twig.extension.map')) && false ?: '_'});
+        $instance->addExtension(${($_ = isset($this->services['ivory.google_map.twig.extension.map.static']) ? $this->services['ivory.google_map.twig.extension.map.static'] : $this->get('ivory.google_map.twig.extension.map.static')) && false ?: '_'});
+        $instance->addExtension(${($_ = isset($this->services['ivory.google_map.twig.extension.place_autocomplete']) ? $this->services['ivory.google_map.twig.extension.place_autocomplete'] : $this->get('ivory.google_map.twig.extension.place_autocomplete')) && false ?: '_'});
+        $instance->addExtension(new \Http\HttplugBundle\Collector\Twig\HttpMessageMarkupExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\DumpExtension(${($_ = isset($this->services['var_dumper.cloner']) ? $this->services['var_dumper.cloner'] : $this->get('var_dumper.cloner')) && false ?: '_'}, $d));
         $instance->addExtension(new \Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension($e));
         $instance->addGlobal('app', $f);
@@ -2561,7 +5746,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwig_Form_RendererService()
     {
-        return $this->services['twig.form.renderer'] = new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig'), ${($_ = isset($this->services['twig']) ? $this->services['twig'] : $this->get('twig')) && false ?: '_'}), ${($_ = isset($this->services['security.csrf.token_manager']) ? $this->services['security.csrf.token_manager'] : $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['twig.form.renderer'] = new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'IvoryGoogleMapBundle:Form:place_autocomplete_widget.html.twig', 1 => 'form_div_layout.html.twig'), ${($_ = isset($this->services['twig']) ? $this->services['twig'] : $this->get('twig')) && false ?: '_'}), ${($_ = isset($this->services['security.csrf.token_manager']) ? $this->services['security.csrf.token_manager'] : $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -2578,6 +5763,9 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views'), 'Twig');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/swiftmailer-bundle/Resources/views'), 'Swiftmailer');
         $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), 'Doctrine');
+        $instance->addPath(($this->targetDirs[3].'/src/RtecaBundle/Resources/views'), 'Rteca');
+        $instance->addPath(($this->targetDirs[3].'/vendor/egeloen/google-map-bundle/Resources/views'), 'IvoryGoogleMap');
+        $instance->addPath(($this->targetDirs[3].'/vendor/php-http/httplug-bundle/Resources/views'), 'Httplug');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath(($this->targetDirs[3].'/app/Resources/views'));
@@ -2742,7 +5930,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getWebProfiler_Controller_ProfilerService()
     {
-        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController(${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['profiler']) ? $this->services['profiler'] : $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['twig']) ? $this->services['twig'] : $this->get('twig')) && false ?: '_'}, array('data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.cache' => array(0 => 'cache', 1 => '@WebProfiler/Collector/cache.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig'), 'data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig')), 'bottom', ${($_ = isset($this->services['web_profiler.csp.handler']) ? $this->services['web_profiler.csp.handler'] : $this->getWebProfiler_Csp_HandlerService()) && false ?: '_'}, $this->targetDirs[3]);
+        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController(${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['profiler']) ? $this->services['profiler'] : $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['twig']) ? $this->services['twig'] : $this->get('twig')) && false ?: '_'}, array('data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.cache' => array(0 => 'cache', 1 => '@WebProfiler/Collector/cache.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig'), 'httplug.collector.collector' => array(0 => 'httplug', 1 => '@Httplug/webprofiler.html.twig'), 'data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig')), 'bottom', ${($_ = isset($this->services['web_profiler.csp.handler']) ? $this->services['web_profiler.csp.handler'] : $this->getWebProfiler_Csp_HandlerService()) && false ?: '_'}, $this->targetDirs[3]);
     }
 
     /**
@@ -2766,23 +5954,23 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the private '1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' shared service.
+     * Gets the private '1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker
      */
-    protected function get1613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService()
+    protected function get18d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService()
     {
-        return $this->services['1_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab'] = new \Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker($this);
+        return $this->services['1_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e'] = new \Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker($this);
     }
 
     /**
-     * Gets the private '2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab' shared service.
+     * Gets the private '2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e' shared service.
      *
      * @return \Symfony\Component\Config\Resource\SelfCheckingResourceChecker
      */
-    protected function get2613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9abService()
+    protected function get28d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65eService()
     {
-        return $this->services['2_613f33e454d479678f9a1a104c13a4499c21f7effae9e4c2053970fdcebad9ab'] = new \Symfony\Component\Config\Resource\SelfCheckingResourceChecker();
+        return $this->services['2_8d318ec58a9a63a1b368c56cdcec0d9ccf6d87675fa045943146452fd212e65e'] = new \Symfony\Component\Config\Resource\SelfCheckingResourceChecker();
     }
 
     /**
@@ -2839,7 +6027,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getArgumentResolver_ServiceService()
     {
-        return $this->services['argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(new \Symfony\Component\DependencyInjection\ServiceLocator(array()));
+        return $this->services['argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(new \Symfony\Component\DependencyInjection\ServiceLocator(array('RtecaBundle\\Controller\\SecurityController:loginAction' => function () {
+            return ${($_ = isset($this->services['service_locator.adb387edf44001656cf7d6606ecd3a0f']) ? $this->services['service_locator.adb387edf44001656cf7d6606ecd3a0f'] : $this->getServiceLocator_Adb387edf44001656cf7d6606ecd3a0fService()) && false ?: '_'};
+        }, 'RtecaBundle\\Controller\\SecurityController::loginAction' => function () {
+            return ${($_ = isset($this->services['service_locator.adb387edf44001656cf7d6606ecd3a0f']) ? $this->services['service_locator.adb387edf44001656cf7d6606ecd3a0f'] : $this->getServiceLocator_Adb387edf44001656cf7d6606ecd3a0fService()) && false ?: '_'};
+        })));
     }
 
     /**
@@ -2879,7 +6071,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Annotations_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('osfr8mKwDU', 0, 'zS3hw2B2gUjnqZGWj9DDRb', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('zS4RMZW+8e', 0, 'KdRXxan5Ncrkfkj4wWdwex', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -2889,7 +6081,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_App_RecorderInnerService($lazyLoad = true)
     {
-        $this->services['cache.app.recorder_inner'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('9cJrkoroPn', 0, (__DIR__.'/pools'));
+        $this->services['cache.app.recorder_inner'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('3fXnuXOleF', 0, (__DIR__.'/pools'));
 
         if ($this->has('monolog.logger.cache')) {
             $instance->setLogger(${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
@@ -2905,7 +6097,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Serializer_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('XJ+mKrnkOK', 0, 'zS3hw2B2gUjnqZGWj9DDRb', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3+NmF9LlL1', 0, 'KdRXxan5Ncrkfkj4wWdwex', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -2915,7 +6107,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_System_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('hhfLTMyZva', 0, 'zS3hw2B2gUjnqZGWj9DDRb', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Qxs4FuOOoq', 0, 'KdRXxan5Ncrkfkj4wWdwex', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -2935,7 +6127,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Validator_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('5rz-sY-DWY', 0, 'zS3hw2B2gUjnqZGWj9DDRb', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('1GdwBfhULn', 0, 'KdRXxan5Ncrkfkj4wWdwex', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -3113,6 +6305,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'httplug.collector.collector' shared service.
+     *
+     * @return \Http\HttplugBundle\Collector\Collector
+     */
+    protected function getHttplug_Collector_CollectorService()
+    {
+        return $this->services['httplug.collector.collector'] = new \Http\HttplugBundle\Collector\Collector();
+    }
+
+    /**
      * Gets the private 'resolve_controller_name_subscriber' shared service.
      *
      * @return \Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber
@@ -3170,8 +6372,9 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_Authentication_ManagerService()
     {
         $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(new RewindableGenerator(function () {
-            yield 0 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : $this->getSecurity_Authentication_Provider_Anonymous_MainService()) && false ?: '_'};
-        }, 1), true);
+            yield 0 => ${($_ = isset($this->services['security.authentication.provider.dao.main']) ? $this->services['security.authentication.provider.dao.main'] : $this->getSecurity_Authentication_Provider_Dao_MainService()) && false ?: '_'};
+            yield 1 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : $this->getSecurity_Authentication_Provider_Anonymous_MainService()) && false ?: '_'};
+        }, 2), true);
 
         $instance->setEventDispatcher(${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'});
 
@@ -3185,7 +6388,17 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_Provider_Anonymous_MainService()
     {
-        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('598512f565ca72.08210571');
+        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('59862f812674d4.11464151');
+    }
+
+    /**
+     * Gets the private 'security.authentication.provider.dao.main' shared service.
+     *
+     * @return \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider
+     */
+    protected function getSecurity_Authentication_Provider_Dao_MainService()
+    {
+        return $this->services['security.authentication.provider.dao.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}, new \Symfony\Component\Security\Core\User\UserChecker(), 'main', ${($_ = isset($this->services['security.encoder_factory']) ? $this->services['security.encoder_factory'] : $this->get('security.encoder_factory')) && false ?: '_'}, true);
     }
 
     /**
@@ -3222,7 +6435,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_LogoutUrlGeneratorService()
     {
-        return $this->services['security.logout_url_generator'] = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator(${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : $this->get('request_stack', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        $this->services['security.logout_url_generator'] = $instance = new \Symfony\Component\Security\Http\Logout\LogoutUrlGenerator(${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : $this->get('request_stack', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+
+        $instance->registerListener('main', '/logout', 'logout', '_csrf_token', NULL, NULL);
+
+        return $instance;
     }
 
     /**
@@ -3246,6 +6463,20 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'security.user.provider.concrete.in_memory' shared service.
+     *
+     * @return \Symfony\Component\Security\Core\User\InMemoryUserProvider
+     */
+    protected function getSecurity_User_Provider_Concrete_InMemoryService()
+    {
+        $this->services['security.user.provider.concrete.in_memory'] = $instance = new \Symfony\Component\Security\Core\User\InMemoryUserProvider();
+
+        $instance->createUser(new \Symfony\Component\Security\Core\User\User('admin', 'kitten', array(0 => 'ROLE_ADMIN')));
+
+        return $instance;
+    }
+
+    /**
      * Gets the private 'security.user_value_resolver' shared service.
      *
      * @return \Symfony\Bundle\SecurityBundle\SecurityUserValueResolver
@@ -3253,6 +6484,18 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_UserValueResolverService()
     {
         return $this->services['security.user_value_resolver'] = new \Symfony\Bundle\SecurityBundle\SecurityUserValueResolver(${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the private 'service_locator.adb387edf44001656cf7d6606ecd3a0f' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function getServiceLocator_Adb387edf44001656cf7d6606ecd3a0fService()
+    {
+        return $this->services['service_locator.adb387edf44001656cf7d6606ecd3a0f'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('authUtils' => function () {
+            return ${($_ = isset($this->services['security.authentication_utils']) ? $this->services['security.authentication_utils'] : $this->get('security.authentication_utils', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+        }));
     }
 
     /**
@@ -3425,10 +6668,25 @@ class appDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/sensio/framework-extra-bundle'),
                     'namespace' => 'Sensio\\Bundle\\FrameworkExtraBundle',
                 ),
-                'AppBundle' => array(
+                'RtecaBundle' => array(
                     'parent' => NULL,
-                    'path' => ($this->targetDirs[3].'/src/AppBundle'),
-                    'namespace' => 'AppBundle',
+                    'path' => ($this->targetDirs[3].'/src/RtecaBundle'),
+                    'namespace' => 'RtecaBundle',
+                ),
+                'IvoryGoogleMapBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/egeloen/google-map-bundle'),
+                    'namespace' => 'Ivory\\GoogleMapBundle',
+                ),
+                'IvorySerializerBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/egeloen/serializer-bundle'),
+                    'namespace' => 'Ivory\\SerializerBundle',
+                ),
+                'HttplugBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/php-http/httplug-bundle'),
+                    'namespace' => 'Http\\HttplugBundle',
                 ),
                 'DebugBundle' => array(
                     'parent' => NULL,
@@ -3490,7 +6748,10 @@ class appDevDebugProjectContainer extends Container
                 'SwiftmailerBundle' => 'Symfony\\Bundle\\SwiftmailerBundle\\SwiftmailerBundle',
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
-                'AppBundle' => 'AppBundle\\AppBundle',
+                'RtecaBundle' => 'RtecaBundle\\RtecaBundle',
+                'IvoryGoogleMapBundle' => 'Ivory\\GoogleMapBundle\\IvoryGoogleMapBundle',
+                'IvorySerializerBundle' => 'Ivory\\SerializerBundle\\IvorySerializerBundle',
+                'HttplugBundle' => 'Http\\HttplugBundle\\HttplugBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3500,11 +6761,11 @@ class appDevDebugProjectContainer extends Container
             ),
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'appDevDebugProjectContainer',
-            'database_host' => '127.0.0.1',
+            'database_host' => 'localhost',
             'database_port' => 3306,
             'database_name' => 'rastreiateca',
-            'database_user' => 'rastreiateca',
-            'database_password' => 'JfCuAGF1YjjXxcpr',
+            'database_user' => 'root',
+            'database_password' => 'm230889m',
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => NULL,
@@ -3567,7 +6828,8 @@ class appDevDebugProjectContainer extends Container
             'security.authentication.hide_user_not_found' => true,
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
-                0 => 'form_div_layout.html.twig',
+                0 => 'IvoryGoogleMapBundle:Form:place_autocomplete_widget.html.twig',
+                1 => 'form_div_layout.html.twig',
             ),
             'monolog.use_microseconds' => true,
             'monolog.swift_mailer.handlers' => array(
@@ -3810,6 +7072,10 @@ class appDevDebugProjectContainer extends Container
                 'data_collector.dump' => array(
                     0 => 'dump',
                     1 => '@Debug/Profiler/dump.html.twig',
+                ),
+                'httplug.collector.collector' => array(
+                    0 => 'httplug',
+                    1 => '@Httplug/webprofiler.html.twig',
                 ),
                 'data_collector.config' => array(
                     0 => 'config',

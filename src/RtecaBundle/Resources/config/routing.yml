@@ -1,0 +1,11 @@
+rteca_homepage:
+    path:     /
+    defaults: { _controller: RtecaBundle:Default:index }
+
+login:
+    path:     /login
+    defaults: { _controller: RtecaBundle:Security:login }
+
+rteca_admin:
+    path:     /admin
+    defaults: { _controller: RtecaBundle:Default:admin }
