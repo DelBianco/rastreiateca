@@ -23,9 +23,9 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
+      <parameter key="EasyDeployBundle">EasyCorp\Bundle\EasyDeployBundle\EasyDeployBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
-      <parameter key="EasyDeployBundle">EasyCorp\Bundle\EasyDeployBundle\EasyDeployBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -98,6 +98,11 @@
         <parameter key="path">/home/maxwell/PhpstormProjects/rastreiateca/vendor/sensio/distribution-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\DistributionBundle</parameter>
       </parameter>
+      <parameter key="EasyDeployBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/maxwell/PhpstormProjects/rastreiateca/vendor/easycorp/easy-deploy-bundle/src</parameter>
+        <parameter key="namespace">EasyCorp\Bundle\EasyDeployBundle</parameter>
+      </parameter>
       <parameter key="SensioGeneratorBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">/home/maxwell/PhpstormProjects/rastreiateca/vendor/sensio/generator-bundle</parameter>
@@ -107,11 +112,6 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/home/maxwell/PhpstormProjects/rastreiateca/vendor/symfony/symfony/src/Symfony/Bundle/WebServerBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
-      </parameter>
-      <parameter key="EasyDeployBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">/home/maxwell/PhpstormProjects/rastreiateca/vendor/easycorp/easy-deploy-bundle/src</parameter>
-        <parameter key="namespace">EasyCorp\Bundle\EasyDeployBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -434,12 +434,12 @@
     <parameter key="console.command.ids" type="collection">
       <parameter key="console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand">console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand</parameter>
       <parameter key="console.command.sensiolabs_security_command_securitycheckercommand">sensio_distribution.security_checker.command</parameter>
+      <parameter key="console.command.easycorp_bundle_easydeploybundle_command_deploycommand">easy_deploy.command.deploy</parameter>
+      <parameter key="console.command.easycorp_bundle_easydeploybundle_command_rollbackcommand">easy_deploy.command.rollback</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverruncommand">console.command.symfony_bundle_webserverbundle_command_serverruncommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstartcommand">console.command.symfony_bundle_webserverbundle_command_serverstartcommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstopcommand">console.command.symfony_bundle_webserverbundle_command_serverstopcommand</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstatuscommand">console.command.symfony_bundle_webserverbundle_command_serverstatuscommand</parameter>
-      <parameter key="console.command.easycorp_bundle_easydeploybundle_command_deploycommand">easy_deploy.command.deploy</parameter>
-      <parameter key="console.command.easycorp_bundle_easydeploybundle_command_rollbackcommand">easy_deploy.command.rollback</parameter>
     </parameter>
   </parameters>
   <services>
@@ -635,7 +635,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -645,7 +645,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2334,12 +2334,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>598639aac702c8.60485285</argument>
+      <argument>59863b586f39f1.61493256</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>598639aac702c8.60485285</argument>
+      <argument>59863b586f39f1.61493256</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -5451,6 +5451,17 @@
       <tag name="console.command"/>
       <argument type="service" id="sensio_distribution.security_checker"/>
     </service>
+    <service id="easy_deploy.command.deploy" class="EasyCorp\Bundle\EasyDeployBundle\Command\DeployCommand">
+      <tag name="console.command" command="deploy"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="expression">container.hasParameter('kernel.project_dir') ? parameter('kernel.project_dir') : parameter('kernel.root_dir') ~ '/..'</argument>
+      <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/logs</argument>
+    </service>
+    <service id="easy_deploy.command.rollback" class="EasyCorp\Bundle\EasyDeployBundle\Command\RollbackCommand">
+      <tag name="console.command" command="rollback"/>
+      <argument type="expression">container.hasParameter('kernel.project_dir') ? parameter('kernel.project_dir') : parameter('kernel.root_dir') ~ '/..'</argument>
+      <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/logs</argument>
+    </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command"/>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/public</argument>
@@ -5466,17 +5477,6 @@
     </service>
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command"/>
-    </service>
-    <service id="easy_deploy.command.deploy" class="EasyCorp\Bundle\EasyDeployBundle\Command\DeployCommand">
-      <tag name="console.command" command="deploy"/>
-      <argument type="service" id="file_locator"/>
-      <argument type="expression">container.hasParameter('kernel.project_dir') ? parameter('kernel.project_dir') : parameter('kernel.root_dir') ~ '/..'</argument>
-      <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/logs</argument>
-    </service>
-    <service id="easy_deploy.command.rollback" class="EasyCorp\Bundle\EasyDeployBundle\Command\RollbackCommand">
-      <tag name="console.command" command="rollback"/>
-      <argument type="expression">container.hasParameter('kernel.project_dir') ? parameter('kernel.project_dir') : parameter('kernel.root_dir') ~ '/..'</argument>
-      <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/logs</argument>
     </service>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.RtecaBundle\Controller\DefaultController" class="RtecaBundle\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.RtecaBundle\Controller\DefaultController" class="RtecaBundle\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5736,7 +5736,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Qxs4FuOOoq</argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5744,7 +5744,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>1GdwBfhULn</argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5752,7 +5752,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>3+NmF9LlL1</argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5760,7 +5760,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>zS4RMZW+8e</argument>
       <argument>0</argument>
-      <argument>D-MOMJnL5vZ5YrrOXtfRtE</argument>
+      <argument>cPEKxAOpapdNWa1wsyAUI4</argument>
       <argument>/home/maxwell/PhpstormProjects/rastreiateca/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
